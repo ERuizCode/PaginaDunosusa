@@ -497,9 +497,12 @@ footer{
     width: 60px;
     height: 60px;
     z-index: 1000;
+    
 }
 
 .boton-accesibilidad img{
     width: 100%;
     height: auto;
+    border-radius: 15px;
+    
 }

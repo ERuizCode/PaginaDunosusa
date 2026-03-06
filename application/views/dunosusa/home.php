@@ -59,7 +59,7 @@
 
     <section id="final">
         <h2>Ofrecenos tu terreno!</h2>
-        <button tabindex="12">click aquí</button>
+        <button tabindex="12">Haz click aquí</button>
     </section>
     
     <a href="#" class="boton-accesibilidad">
