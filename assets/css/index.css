@@ -1,0 +1,488 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+ul{ list-style: none;}
+li{ font-size: 1.25em;}
+
+button{
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: rgb(245, 245, 245);
+    background-color: #e1251b;
+}
+
+button:hover{
+    background-color: #891005;
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+.color-puritano{ color:#036431; 
+
+}
+.color-dunosusa{ color:#e1251b; 
+
+}
+
+header{
+    background-color: rgb(228, 0, 0);
+    
+}
+
+header .logo{
+    margin: 0;
+    padding: 15px 30px;
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;   /* ← logo arriba, nav abajo */
+    align-items: center;      /* ← todo centrado */
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;      /* ← links en fila */
+    flex-wrap: wrap;          /* ← si no caben, bajan */
+    justify-content: center;  /* ← centrado */
+    text-align: center;
+    padding-bottom: 15px;
+    gap: 5px;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(245, 245, 245);
+}
+
+header a:hover{
+    color: #000000;
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 80vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("/assets/media/comprar-cropped.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: rgb(245, 245, 245);
+}
+
+#hero button{
+    font-size: 1.75em;
+}
+
+
+
+#somos-proya .container{
+    text-align: center;
+    padding: 120px 12px;
+}
+
+#nuestros-servicios{
+    background-color: #031430;
+    color: rgb(245, 245, 245);
+    text-align: center;
+}
+
+#nuestros-servicios .container{
+    padding: 150px 12px;
+}
+
+#nuestros-servicios h2{
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+#nuestros-servicios p{
+    
+    display: none;
+}
+
+#nuestros-servicios .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 10px;
+    margin: 30px;
+    border-radius: 20px;
+}
+
+
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("/assets/media/precios.jpg");
+
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("/assets/media/ubicacion.jpg");
+}
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),url("/assets/media/app.jpg");
+
+}
+
+
+#somos-dunosusa .container{
+    text-align: center;
+    padding: 120px 12px;
+}
+
+#final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(/assets/media/final-terreno.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(245, 245, 245);
+    height: 80vh;
+}
+
+#final h2{
+    font-size: 9vw;
+}
+
+#final button{
+    font-size: 5vw;
+}
+
+footer{
+    background-color: #e1251b;
+    color: rgb(245, 245, 245);
+}
+
+.footer-contenido{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 30px 30px;
+    gap: 30px;
+}
+
+.footer-col{
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-col h4{
+    color: rgb(245, 245, 245);
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-col p{
+    color: rgb(245, 245, 245);
+    font-size: 0.95em;
+    margin: 4px 0;
+}
+
+.footer-col ul{
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li{
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.footer-col ul li a{
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    transition: opacity 0.3s;
+}
+
+.footer-col ul li a:hover{
+    opacity: 0.7;
+}
+
+/* Iconos redes sociales */
+.redes{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.red-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid rgb(245, 245, 245);
+    border-radius: 8px;
+    padding: 8px;
+    transition: opacity 0.3s;
+}
+
+.red-social svg{
+    width: 100%;
+    height: 100%;
+}
+
+.red-social:hover{
+    opacity: 0.7;
+    background-color: #031430;
+}
+
+/* Barra inferior */
+.footer-bottom{
+    background-color: rgba(0,0,0,0.2);
+    padding: 12px 0;
+}
+
+.footer-bottom .container{
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer-bottom p{
+    color: rgb(245, 245, 245);
+    font-size: 0.9em;
+    padding: 0 30px;
+    margin: 0;
+}
+
+
+@media (min-width: 850px){
+
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction: column;   /* ← sigue columna: logo encima, nav abajo */
+        align-items: center;      /* ← centrado */
+    }
+
+    header .logo{
+        height: 80px;             /* ← más grande en desktop */
+        padding: 15px 30px;
+    }
+
+    header nav{
+        flex-direction: row;      /* ← fila en desktop */
+        flex-wrap: nowrap;        /* ← no bajan en desktop */
+        padding-bottom: 10px;
+        padding-right: 0;
+    }
+
+    #hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("/assets/media/comprar.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+    #hero h1{
+        font-size: 5em;
+    }
+
+    #somos-proya .container{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 120px 30px;
+    }
+
+    #somos-proya .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #somos-proya h2{
+        margin-top: 0px;
+    }
+
+    #somos-proya .img-container{
+        background-image: url("/assets/media/puritano.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 400px;
+        width: 600px; 
+    }
+
+    #nuestros-servicios .servicios{
+        display: flex;
+        justify-content: center;
+    }
+
+    #nuestros-servicios p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #nuestros-servicios h2{
+        font-size: 4em;
+    }
+
+    #nuestros-servicios h3{
+        margin-top: 0;
+    }
+
+    #nuestros-servicios .carta{
+        padding: 50px;
+        padding-top: 170px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: rgba(50, 50, 50, 1);
+        box-shadow: 2px 2px 10px rgba(116, 17, 17, 0.5);
+    }
+
+    .carta:first-child{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0),
+            rgba(0,0,0,0)
+        )
+        ,url("/assets/media/precios-cropped.jpg");
+
+    }
+
+    .carta:nth-child(2){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0),
+            rgba(0,0,0,0)
+        )
+        ,url("/assets/media/ubicacion-cropped.jpg");
+    }
+
+    .carta:nth-child(3){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0),
+            rgba(0,0,0,0)
+        )
+        ,url("/assets/media/app-cropped.jpg");
+
+    }
+
+    #somos-dunosusa .container{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        padding: 120px 30px;
+
+    }
+
+    #somos-dunosusa .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #somos-dunosusa h2{
+        margin-top: 0px;
+    }
+
+    #somos-dunosusa .img-container{
+        background-image: url("/assets/media/somo-dunosusa.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 400px;
+        width: 600px; 
+    }
+
+
+
+    #final h2{
+        font-size: 5em;
+    }
+
+    #final button{
+        font-size: 2em;
+    }
+
+    footer .container{
+        justify-content: flex-end;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    #caracteristicas{
+        background-position-x: calc(100vw - 800px);
+    }
+}
