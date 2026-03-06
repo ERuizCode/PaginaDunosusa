@@ -9,13 +9,13 @@
         <div class="container">
             <img class="logo" src="assets/media/logo.png" alt="Dunosusa">
             <nav>
-                <a href="#">Inicio</a>
-                <a href="#">Nosotros</a>
-                <a href="#">Ventas Mayoreo</a>
-                <a href="#">Sucursales</a>
-                <a href="#">Bolsa de trabajo</a>
-                <a href="#">Contacto</a>
-                <a href="#">Mi Compra</a>
+                <a href="#" tabindex="1">Inicio</a>
+                <a href="#" tabindex="2">Nosotros</a>
+                <a href="#" tabindex="3">Ventas Mayoreo</a>
+                <a href="#" tabindex="4">Sucursales</a>
+                <a href="#" tabindex="5">Bolsa de trabajo</a>
+                <a href="#" tabindex="6">Contacto</a>
+                <a href="#" tabindex="7">Mi Compra</a>
             </nav>
         </div>
     </header>

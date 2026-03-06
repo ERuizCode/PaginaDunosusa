@@ -2,7 +2,7 @@
 
 <section id="hero">
         <h1>Tu mejor compra,<br>nuestra mayor satisfacción</h1>
-        <button>Comprar ahora</button>
+        <button tabindex="8">Comprar ahora</button>
     </section>
 
     <section id="somos-proya">
@@ -26,17 +26,17 @@
                 <div class="carta">
                     <h3>Compras</h3>
                     <p>En DUNOSUSA te ofrecemos amplia variedad de marcas en abarrotes, salchichería, higiene personal, dulcería, artículos de limpieza y mucho más. Todo a los precios más bajos del mercado.</p>
-                    <button>Ir a Mi Compra</button>
+                    <button tabindex="9">Ir a Mi Compra</button>
                 </div>
                 <div class="carta">
                     <h3>Ubica tu tienda</h3>
                     <p>Contamos con más de 500 tiendas DUNOSUSA en el sureste mexicano. Cada día más cerca de ti expandiéndonos para ofrecerte los mejores productos en abarrotes, a los mejores precios del mercado.</p>
-                    <button>Mas info</button>
+                    <button tabindex="10" >Mas info</button>
                 </div>
                 <div class="carta">
                     <h3>Contacto</h3>
                     <p>Para decirnos tus comentarios y mantenerte en contacto con nosotros, mandanos un mensaje con tus recomendaciones y sugerencias.</p>
-                    <button>Ir a Contacto</button>
+                    <button tabindex="11" >Ir a Contacto</button>
                 </div>  
             </div>
         </div>
@@ -59,8 +59,12 @@
 
     <section id="final">
         <h2>Ofrecenos tu terreno!</h2>
-        <button>Haz click aquí</button>
+        <button tabindex="12">click aquí</button>
     </section>
+    
+    <a href="#" class="boton-accesibilidad">
+    <img src="assets/media/logoaccesibilidad.png" alt="Accesibilidad">
+</a>
 
 
     

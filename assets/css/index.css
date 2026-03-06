@@ -84,6 +84,9 @@ header a{
 header a:hover{
     color: #000000;
 }
+header a:focus{
+    outline: 3px solid black;
+}
 
 #hero{
     display: flex;
@@ -485,4 +488,18 @@ footer{
     #caracteristicas{
         background-position-x: calc(100vw - 800px);
     }
+}
+
+.boton-accesibilidad{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+.boton-accesibilidad img{
+    width: 100%;
+    height: auto;
 }
