@@ -65,8 +65,8 @@ header{
 
 header .logo{
     margin: 0;
-    padding: 15px 30px;
-    height: 80px;
+    padding: 8px 15px;
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -75,6 +75,7 @@ header .container{
     display: flex;
     flex-direction: column;   /* ← logo arriba, nav abajo */
     align-items: center;      /* ← todo centrado */
+    
 }
 
 header nav{
@@ -83,12 +84,13 @@ header nav{
     flex-wrap: wrap;          /* ← si no caben, bajan */
     justify-content: center;  /* ← centrado */
     text-align: center;
-    padding-bottom: 15px;
+    padding-bottom: 7px;
+    padding-top: 7px;
     gap: 5px;
 }
 
 header a{
-    padding: 5px 12px;
+    padding: 6px 12px;
     text-decoration: none;
     font-weight: bold;
     color: rgb(245, 245, 245);
@@ -427,7 +429,7 @@ footer{
 
 
 /* Para dispositivos de escritorio o que tengan un mayor a 850px de ancho */
-@media (min-width: 850px){
+@media (min-width: 1130px){
 
     header{
         position: fixed;
@@ -435,20 +437,21 @@ footer{
     }
 
     header .container{
-        flex-direction: column;   /* ← sigue columna: logo encima, nav abajo */
+        flex-direction: row;   /* ←column: logo encima, nav abajo. row: todo en linea */
         align-items: center;      /* ← centrado */
+        justify-content: space-evenly;
+        margin-right: 100px;
+        margin-left: 20px;
     }
 
     header .logo{
-        height: 80px;             /* ← más grande en desktop */
-        padding: 15px 30px;
+        height: 50px;              /* ← más grande en desktop */
+        padding: 3px 20px;          /* 10px y 20px pref*/
     }
 
     header nav{
         flex-direction: row;      /* ← fila en desktop */
         flex-wrap: nowrap;        /* ← no bajan en desktop */
-        padding-bottom: 10px;
-        padding-right: 0;
     }
 
     #slogan-principal{
