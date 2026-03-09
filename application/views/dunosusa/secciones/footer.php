@@ -8,7 +8,7 @@
             <p>Col. Kanasin Kanasin, Yucatán, C.P. 97370</p>
             <p><strong><br>Teléfonos:</strong></p>
             <p>+52 (999) 9406060 con 10 líneas</p>
-            <img src="assets/media/logo.png" alt="Dunosusa" style="height: 70px; margin-top: 20px;">
+            <img src="<?= base_url('assets/media/logo.png') ?>" alt="Dunosusa" style="height: 70px; margin-top: 20px;">
         </div>
 
         <!-- Columna 2: ubicaciones -->

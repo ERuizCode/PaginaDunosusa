@@ -31,6 +31,17 @@ button{
 
 button:hover{
     background-color: #891005;
+    transition: all .3s ease-in-out;
+}
+
+button:focus{
+    background-color: #891005;
+    /*Abajo Exterior para accesibilidad*/
+    outline: 3px solid rgb(245, 245, 245); 
+    border: 10px;
+    outline-offset: 3px;
+    transition: all .3s ease-in-out;
+    
 }
 
 .container{
@@ -45,8 +56,10 @@ button:hover{
 
 }
 
+
+
 header{
-    background-color: rgb(228, 0, 0);
+    background-color: #e1251b;
     
 }
 
@@ -79,16 +92,42 @@ header a{
     text-decoration: none;
     font-weight: bold;
     color: rgb(245, 245, 245);
+    transition: all 100ms ease-in-out;
+    
 }
+
+header a.activo {
+    color: #e1251b; /**/
+    background-color: rgba(245, 245, 245, 0.9);
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+
 
 header a:hover{
-    color: #000000;
+    outline: 3px solid rgb(245, 245, 245); 
+    border: 10px;
+    outline-offset: 3px;
+    
+    border-radius: 20px;
+    padding: 5px 15px;
+
+    
 }
-header a:focus{
-    outline: 3px solid black;
+header a:focus {
+    /*Abajo Exterior para accesibilidad*/
+    outline: 3px solid rgb(245, 245, 245); 
+    border: 10px;
+    outline-offset: 3px;
+
+    /*Abajo es para realizar forma de pildora */
+    border-radius: 20px;
+    padding: 5px 15px;
+
 }
 
-#hero{
+#slogan-principal{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,17 +145,17 @@ header a:focus{
     background-position: center center;
 }
 
-#hero h1{
+#slogan-principal h1{
     color: rgb(245, 245, 245);
 }
 
-#hero button{
+#slogan-principal button{
     font-size: 1.75em;
 }
 
 
 
-#somos-proya .container{
+#puritano .container{
     text-align: center;
     padding: 120px 12px;
 }
@@ -184,7 +223,7 @@ header a:focus{
     padding: 120px 12px;
 }
 
-#final{
+#ofrece-terreno{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,11 +237,11 @@ header a:focus{
     height: 80vh;
 }
 
-#final h2{
+#ofrece-terreno h2{
     font-size: 9vw;
 }
 
-#final button{
+#ofrece-terreno button{
     font-size: 5vw;
 }
 
@@ -245,17 +284,42 @@ footer{
 .footer-col ul li{
     margin: 10px 0;
     font-size: 1em;
+    
 }
 
 .footer-col ul li a{
     text-decoration: none;
     color: rgb(245, 245, 245);
     transition: opacity 0.3s;
+    
+    
 }
 
 .footer-col ul li a:hover{
-    opacity: 0.7;
+    /*Abajo Exterior para accesibilidad*/
+    outline: 3px solid rgb(245, 245, 245); 
+    border: 10px;
+    outline-offset: 3px;
+
+    /*Abajo es para realizar forma de pildora */
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: all 100ms ease-in-out;
+    
 }
+
+.footer-col ul li a:focus {
+    /*Abajo Exterior para accesibilidad*/
+    outline: 3px solid rgb(245, 245, 245); 
+    border: 10px;
+    outline-offset: 3px;
+
+    /*Abajo es para realizar forma de pildora */
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: all 100ms ease-in-out;
+}
+
 
 /* Iconos redes sociales */
 .redes{
@@ -282,8 +346,26 @@ footer{
 }
 
 .red-social:hover{
-    opacity: 0.7;
-    background-color: #031430;
+    /*Abajo Exterior para accesibilidad*/
+    outline: 3px solid rgb(245, 245, 245); 
+    border: 10px;
+    outline-offset: 3px;
+
+    /*Abajo es para realizar forma cuadrado-redondo de redes sociales */
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: all 100ms ease-in-out;
+}
+.red-social:focus{
+    /*Abajo Exterior para accesibilidad*/
+    outline: 3px solid rgb(245, 245, 245); 
+    border: 10px;
+    outline-offset: 3px;
+
+    /*Abajo es para realizar forma cuadrado-redondo de redes sociales */
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: all 100ms ease-in-out;
 }
 
 /* Barra inferior */
@@ -306,6 +388,45 @@ footer{
 }
 
 
+.boton-accesibilidad{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+
+    
+}
+
+.boton-accesibilidad img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    outline: 3px solid rgb(0, 0, 0); 
+    
+}
+
+.boton-accesibilidad img:hover{
+    outline: 3px solid #FFD700; /* ← amarillo dorado, visible en todo */
+    outline-offset: 7px;
+    border-radius: 15px;
+    transition: all 100ms ease-in-out;
+}
+
+.boton-accesibilidad:focus img {
+    outline: none;
+}
+.boton-accesibilidad:focus {
+    outline: 3px solid #FFD700; /* ← amarillo dorado, visible en todo */
+    outline-offset: 7px;
+    border-radius: 15px;
+    transition: all 100ms ease-in-out;
+    
+}
+
+
+/* Para dispositivos de escritorio o que tengan un mayor a 850px de ancho */
 @media (min-width: 850px){
 
     header{
@@ -330,7 +451,7 @@ footer{
         padding-right: 0;
     }
 
-    #hero{
+    #slogan-principal{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -349,17 +470,17 @@ footer{
 }
 
 
-    #hero h1{
+    #slogan-principal h1{
         font-size: 5em;
     }
 
-    #somos-proya .container{
+    #puritano .container{
         display: flex;
         justify-content: space-evenly;
         padding: 120px 30px;
     }
 
-    #somos-proya .texto{
+    #puritano .texto{
         width: 50%;
         max-width: 600px;
         text-align: initial;
@@ -369,11 +490,11 @@ footer{
         justify-content: center;
     }
 
-    #somos-proya h2{
+    #puritano h2{
         margin-top: 0px;
     }
 
-    #somos-proya .img-container{
+    #puritano .img-container{
         background-image: url("/assets/media/puritano.jpg");
         background-size: cover;
         background-position: center center;
@@ -440,8 +561,9 @@ footer{
 
     #somos-dunosusa .container{
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: space-evenly;
+        align-items: center;           /* ← agrega esto para que queden al mismo nivel */
         padding: 120px 30px;
 
     }
@@ -465,16 +587,16 @@ footer{
         background-size: cover;
         background-position: center center;
         height: 400px;
-        width: 600px; 
+        width: 500px; 
     }
 
 
 
-    #final h2{
+    #ofrece-terreno h2{
         font-size: 5em;
     }
 
-    #final button{
+    #ofrece-terreno button{
         font-size: 2em;
     }
 
@@ -484,25 +606,5 @@ footer{
 
 }
 
-@media (min-width: 1200px) {
-    #caracteristicas{
-        background-position-x: calc(100vw - 800px);
-    }
-}
 
-.boton-accesibilidad{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    z-index: 1000;
-    
-}
 
-.boton-accesibilidad img{
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    
-}

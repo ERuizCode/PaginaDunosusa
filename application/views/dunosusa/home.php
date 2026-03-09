@@ -1,11 +1,11 @@
 <?php $this->load->view('dunosusa/secciones/header'); ?>
 
-<section id="hero">
+<section id="slogan-principal">
         <h1>Tu mejor compra,<br>nuestra mayor satisfacción</h1>
         <button tabindex="8">Comprar ahora</button>
     </section>
 
-    <section id="somos-proya">
+    <section id="puritano">
         <div class="container">
             <div class="img-container"></div>
             <div class="texto">
@@ -44,7 +44,7 @@
 
     <section id="somos-dunosusa">
         <div class="container">
-            <div class="img-container"></div>
+            
             <div class="texto">
             <h2>Somos <span class="color-dunosusa">DUNOSUSA</span></h2>
                 <p>En Dunosusa somos tu vecino del buen precio. 
@@ -54,17 +54,18 @@
                     abarrotes, salchichería, lácteos, dulcería, higiene personal, artículos de limpieza y mucho más. 
                     Todo con la calidad que mereces y a los precios más accesibles del mercado.</p>
             </div>
+            <div class="img-container"></div>
         </div>
     </section>
 
-    <section id="final">
+    <section id="ofrece-terreno">
         <h2>Ofrecenos tu terreno!</h2>
         <button tabindex="12">Haz click aquí</button>
     </section>
     
-    <a href="#" class="boton-accesibilidad">
-    <img src="assets/media/logoaccesibilidad.png" alt="Accesibilidad">
-</a>
+        <a href="#" class="boton-accesibilidad">
+            <img src="assets/media/logoaccesibilidad.png" alt="accesibilidad">
+        </a>
 
 
     
