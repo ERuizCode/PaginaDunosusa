@@ -95,6 +95,7 @@ header a{
     font-weight: bold;
     color: rgb(245, 245, 245);
     transition: all 100ms ease-in-out;
+    border-radius: 20px;
     
 }
 
