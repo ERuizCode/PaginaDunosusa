@@ -18,30 +18,38 @@ p{ font-size: 1.25em;}
 ul{ list-style: none;}
 li{ font-size: 1.25em;}
 
-button{
+button {
     font-size: 1.25em;
     font-weight: bold;
     padding: 10px 30px;
-    border-radius: 5px;
-    border: 2px solid rgba(0,0,0,0.3);
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    border: 2px solid #e1251b;
+    
     color: rgb(245, 245, 245);
     background-color: #e1251b;
+    box-shadow: 0 6px 0 #c01d14;
+
+
+
+    transition: color 0.3s ease-in-out;
 }
 
-button:hover{
-    background-color: #891005;
-    transition: all .3s ease-in-out;
-}
 
-button:focus{
-    background-color: #891005;
-    /*Abajo Exterior para accesibilidad*/
-    outline: 3px solid rgb(245, 245, 245); 
-    border: 10px;
-    outline-offset: 3px;
-    transition: all .3s ease-in-out;
+button:hover {
+    transform: translateY(4px);
+    box-shadow: 0px 2px 0px #c01d14;
+    box-shadow: 2px 2px 10px #ff0d00;
     
+
+}
+
+button:focus {
+    transform: translateY(4px);
+    box-shadow: 0px 2px 0px #c01d14;
+    box-shadow: 2px 2px 10px #ff0d00;
+    outline: 3px solid rgb(245, 245, 245);
+    outline-offset: 3px;
+    transition: all 0.3s ease-in-out;
 }
 
 .container{
@@ -189,8 +197,15 @@ header a:focus {
     padding: 50px 10px;
     margin: 30px;
     border-radius: 20px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
+#nuestros-servicios .carta:hover {
+    transform: translateY(-10px);                        /* ← se levanta 10px */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);         /* ← sombra para dar profundidad */
+}
 
 .carta:first-child{
     background-image: linear-gradient(
