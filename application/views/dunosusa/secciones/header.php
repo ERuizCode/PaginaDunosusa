@@ -19,7 +19,7 @@
             ?>
             <nav>
                 <a href="<?= base_url() ?>" class="<?= ($pagina_actual == 'index') ? 'activo' : '' ?>"tabindex="1">Inicio</a>
-                <a href="<?= base_url('welcome/nosotros') ?>" class="<?= ($pagina_actual == 'nosotros') ? 'activo' : '' ?>"tabindex="2">Nosotros</a>
+                <a href="#somos-dunosusa"tabindex="2">Nosotros</a>
                 <a href="#"class="<?= ($pagina_actual == 'ventasmayoreo') ? 'activo' : '' ?>"tabindex="3"> Ventas Mayoreo</a>
                 <a href="#" tabindex="4">Sucursales</a>
                 <a href="#" tabindex="5">Bolsa de trabajo</a>
