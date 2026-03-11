@@ -26,12 +26,15 @@
         <div class="footer-col">
             <h4>Aviso De Privacidad</h4>
             <ul>
-                <li><a href="#" tabindex="16"></a></li>
+                <?php
+                /*<li><a href="#" tabindex="16"></a></li>
                 <li><a href="#" tabindex="17"></a></li>
                 <li><a href="#" tabindex="18"></a></li>
                 <li><a href="#" tabindex="19"></a></li>
                 <li><a href="#" tabindex="20"></a></li>
-            </ul>
+                */
+                ?>
+            </ul>  
         </div>
 
         <!-- Columna 4: Redes Sociales -->

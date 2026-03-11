@@ -7,9 +7,6 @@ class Welcome extends CI_Controller {
         $this->load->view('dunosusa/home');
     }
 
-    public function nosotros() {
-        $this->load->view('dunosusa/nosotros');
-    }
 
 
 

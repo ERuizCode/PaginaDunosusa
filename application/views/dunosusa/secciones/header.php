@@ -14,18 +14,19 @@
         <div class="container">
             <img class="logo" src="<?= base_url('assets/media/logo.png') ?>" alt="Dunosusa">
             <?php
-            // detecta el método actual del controller
-            $pagina_actual = $this->router->fetch_method();
+            //detecta el método actual del controller
+            //$pagina_actual = $this->router->fetch_method();
+            //Para resaltar seccion actual en el nav header
             ?>
             <nav>
-                <a href="<?= base_url() ?>" class="<?= ($pagina_actual == 'index') ? 'activo' : '' ?>"tabindex="1">Inicio</a>
+                <a href="#slogan-principal"tabindex="1">Inicio</a>
                 <a href="#somos-dunosusa"tabindex="2">Nosotros</a>
-                <a href="#"class="<?= ($pagina_actual == 'ventasmayoreo') ? 'activo' : '' ?>"tabindex="3"> Ventas Mayoreo</a>
+                <a href="#" tabindex="3"> Ventas Mayoreo</a>
                 <a href="#" tabindex="4">Sucursales</a>
                 <a href="#" tabindex="5">Bolsa de trabajo</a>
                 <a href="#" tabindex="6">Contacto</a>
                 <a href="#" tabindex="7">Mi Compra</a>
-                <!-- DEBUG — bórralo después -->
+                
 
             </nav>
         </div>

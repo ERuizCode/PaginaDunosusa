@@ -253,6 +253,7 @@ header a:focus {
     background-size: cover;
     color: rgb(245, 245, 245);
     height: 80vh;
+    margin-top: 28px;
 }
 
 #ofrece-terreno h2{
