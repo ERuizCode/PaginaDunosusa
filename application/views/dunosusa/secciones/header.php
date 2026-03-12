@@ -22,11 +22,10 @@
             <nav>
                 <a href="#slogan-principal"tabindex="1">Inicio</a>
                 <a href="#somos-dunosusa"tabindex="2">Nosotros</a>
-                <a href="#" tabindex="3"> Ventas Mayoreo</a>
-                <a href="#" tabindex="4">Sucursales</a>
-                <a href="#" tabindex="5">Bolsa de trabajo</a>
-                <a href="#" tabindex="6">Contacto</a>
-                <a href="#" tabindex="7">Mi Compra</a>
+                <a href="#" tabindex="3">Sucursales</a>
+                <a href="#" tabindex="4">Bolsa de trabajo</a>
+                <a href="#" tabindex="5">Contacto</a>
+                <a href="#" tabindex="6">Mi Compra</a>
                 
 
             </nav>
