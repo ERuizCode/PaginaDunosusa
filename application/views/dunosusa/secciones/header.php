@@ -7,7 +7,8 @@
     <title>Dunosusa</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/index.css') ?>">
 </head>
-
+<!-- Script js -->
+<script src="<?= base_url('assets/js/navbar.js') ?>"></script>
 
 <body>
     <header>
