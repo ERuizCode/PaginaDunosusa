@@ -27,7 +27,7 @@ button {
     
     color: rgb(245, 245, 245);
     background-color: #e1251b;
-    box-shadow: 0 6px 0 #c01d14;
+    box-shadow: 0 6px 0 #cd2010;
 
 
 
@@ -37,8 +37,7 @@ button {
 
 button:hover {
     transform: translateY(4px);
-    box-shadow: 0px 2px 0px #c01d14;
-    box-shadow: 2px 2px 10px #ff0d00;
+    box-shadow: 2px 2px 10px #cd2010;
     cursor: pointer;
     
 
@@ -46,8 +45,8 @@ button:hover {
 
 button:focus {
     transform: translateY(4px);
-    box-shadow: 0px 2px 0px #c01d14;
-    box-shadow: 2px 2px 10px #ff0d00;
+    
+    box-shadow: 2px 2px 10px #cd2010;
     outline: 3px solid rgb(245, 245, 245);
     outline-offset: 3px;
     transition: all 0.3s ease-in-out;
@@ -398,7 +397,7 @@ footer{
 
 /* Barra inferior */
 .footer-bottom{
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 12px 0;
 }
 
