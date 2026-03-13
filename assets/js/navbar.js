@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     links.forEach(l => l.classList.remove('activo'));
                     this.classList.add('activo');
 
-                    scrolleando = true; // ← bloquea el observer
+                    scrolleando = true; // ← Bloquea el observer
                     destino.scrollIntoView({ behavior: 'smooth' });
 
-                    // Desbloquea el observer después de que termina el scroll
+                    // Desbloquea observer después de que termina el scroll
                     setTimeout(() => { scrolleando = false; }, 800);
                 }
             }

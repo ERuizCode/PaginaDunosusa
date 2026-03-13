@@ -39,6 +39,7 @@ button:hover {
     transform: translateY(4px);
     box-shadow: 0px 2px 0px #c01d14;
     box-shadow: 2px 2px 10px #ff0d00;
+    cursor: pointer;
     
 
 }
@@ -70,7 +71,7 @@ header {
     background-color: #e1251b;
     position: fixed;
     top: 0;
-    width: 100%;    /* ← esto es lo que falta en mobile */
+    width: 100%;   
     z-index: 100;
 }
 
@@ -86,15 +87,15 @@ header .logo{
 header .container{
     display: flex;
     flex-direction: column;   /* ← logo arriba, nav abajo */
-    align-items: center;      /* ← todo centrado */
+    align-items: center;    
     
 }
 
 header nav{
     display: flex;
-    flex-direction: row;      /* ← links en fila */
-    flex-wrap: wrap;          /* ← si no caben, bajan */
-    justify-content: center;  /* ← centrado */
+    flex-direction: row;     
+    flex-wrap: wrap;         
+    justify-content: center;  
     text-align: center;
     padding-bottom: 7px;
     padding-top: 7px;
@@ -139,7 +140,7 @@ header a:focus {
     border: 10px;
     outline-offset: 3px;
 
-    /*Abajo es para realizar forma de pildora */
+    /*Forma de pildora */
     border-radius: 20px;
     padding: 5px 15px;
 
@@ -211,8 +212,8 @@ header a:focus {
 }
 
 #nuestros-servicios .carta:hover {
-    transform: translateY(-10px);                        /* ← se levanta 10px */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);         /* ← sombra para dar profundidad */
+    transform: translateY(-10px);                       
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);         
 }
 
 .carta:first-child{
@@ -328,7 +329,7 @@ footer{
     border: 10px;
     outline-offset: 3px;
 
-    /*Abajo es para realizar forma de pildora */
+    /*Forma de pildora */
     border-radius: 20px;
     padding: 5px 15px;
     transition: all 100ms ease-in-out;
@@ -341,7 +342,7 @@ footer{
     border: 10px;
     outline-offset: 3px;
 
-    /*Abajo es para realizar forma de pildora */
+    /*Forma de pildora */
     border-radius: 20px;
     padding: 5px 15px;
     transition: all 100ms ease-in-out;
@@ -378,7 +379,7 @@ footer{
     border: 10px;
     outline-offset: 3px;
 
-    /*Abajo es para realizar forma cuadrado-redondo de redes sociales */
+    /*Forma cuadrado-redondo de redes sociales */
     border-radius: 10px;
     padding: 5px 10px;
     transition: all 100ms ease-in-out;
@@ -389,7 +390,7 @@ footer{
     border: 10px;
     outline-offset: 3px;
 
-    /*Abajo es para realizar forma cuadrado-redondo de redes sociales */
+    /*Forma cuadrado-redondo de redes sociales */
     border-radius: 10px;
     padding: 5px 10px;
     transition: all 100ms ease-in-out;
@@ -435,7 +436,7 @@ footer{
 }
 
 .boton-accesibilidad img:hover{
-    outline: 3px solid #FFD700; /* ← amarillo dorado, visible en todo */
+    outline: 3px solid #FFD700; 
     outline-offset: 7px;
     border-radius: 15px;
     transition: all 100ms ease-in-out;
@@ -445,7 +446,7 @@ footer{
     outline: none;
 }
 .boton-accesibilidad:focus {
-    outline: 3px solid #FFD700; /* ← amarillo dorado, visible en todo */
+    outline: 3px solid #FFD700; 
     outline-offset: 7px;
     border-radius: 15px;
     transition: all 100ms ease-in-out;
@@ -453,11 +454,11 @@ footer{
 }
 
 
-/* Para dispositivos de escritorio o que tengan un mayor a 850px de ancho */
+/* Para dispositivos que tengan un mayor a 850px de ancho */
 @media (min-width: 850px){
 
     body {
-        padding-top: 0px; /* ← header más pequeño en desktop */
+        padding-top: 0px;
     }
 
     header{
@@ -466,25 +467,25 @@ footer{
         top: 0; 
     }
     header nav{
-        flex-direction: row;      /* ← fila en desktop */
-        flex-wrap: nowrap;        /* ← no bajan en desktop */
-        gap: 10px;           /* ← reduce el gap */
+        flex-direction: row;     
+        flex-wrap: nowrap;       
+        gap: 10px;         
     }
     header a {
-        font-size: 0.99em;   /* ← letra un poco más pequeña en desktop */
-        padding: 5px 8px;   /* ← menos padding */
+        font-size: 0.99em;  
+        padding: 5px 8px;   
     }
 
     header .container{
         flex-direction: row;   /* ←column: logo encima, nav abajo. row: todo en linea */
-        align-items: center;      /* ← centrado */
+        align-items: center;     
         justify-content: space-evenly;
         margin-right: 20px;
         margin-left: 20px;
     }
 
     header .logo{
-        height: 50px;              /* ← más grande en desktop */
+        height: 50px;            
         padding: 3px 20px;          /* 10px y 20px pref*/
     }
 
@@ -505,7 +506,7 @@ footer{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    margin-top: 0;       /* ← resetea el margin-top del mobile */
+    margin-top: 0;       
     padding-top: 70px;  
     min-height: 100vh;
 }
@@ -604,7 +605,7 @@ footer{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        align-items: center;           /* ← agrega esto para que queden al mismo nivel */
+        align-items: center;         
         padding: 120px 30px;
 
     }
