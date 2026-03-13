@@ -8,7 +8,6 @@ html{
 
 body{
     font-family: 'Roboto', sans-serif;
-     /* ← compensa el header fixed en mobile */
     margin: 0;
 }
 

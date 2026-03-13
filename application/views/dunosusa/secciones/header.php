@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <!-- Evita zoom automatico en mobiles↓ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Dunosusa</title>
+
+    <link rel="icon" type="image/png" href="<?= base_url('assets/media/mini-logoB.png') ?>">
+    
     <link rel="stylesheet" href="<?= base_url('assets/css/index.css') ?>">
+    
 </head>
 <!-- Script js -->
 <script src="<?= base_url('assets/js/navbar.js') ?>"></script>
