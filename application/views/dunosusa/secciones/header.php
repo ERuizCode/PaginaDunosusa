@@ -9,7 +9,8 @@
 <body>
     <header>
         <div class="container">
-            <img class="logo" src="<?= base_url('assets/media/logo.png') ?>" alt="Dunosusa">
+            <img class="logo" src="<?= base_url('assets/media/logo.png') ?>" alt="Dunosusa"
+            href=#>
             <?php $pagina_actual = $this->router->fetch_method(); ?>
             <nav>
                 <?php $tabindex = 1; foreach($nav_links as $link): ?>
