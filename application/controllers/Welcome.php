@@ -9,23 +9,23 @@ class Welcome extends CI_Controller {
     }
 
     private function _datos_layout() {
-        return [
-            'nav_links'          => $this->Pagina_model->get_header_nav(),
-            'footer_contacto'    => $this->Pagina_model->get_footer_contacto(),
-            'footer_ubicaciones' => $this->Pagina_model->get_footer_ubicaciones(),
-        ];
-    }
+    return [
+        'nav_links'          => $this->Pagina_model->Obtener_header_nav(),
+        'footer_contacto'    => $this->Pagina_model->Obtener_footer_contacto(),
+        'footer_ubicaciones' => $this->Pagina_model->Obtener_footer_ubicaciones(),
+    ];
+}
 
     public function index() {
-        $data = $this->_datos_layout();
-        $data['slogan']    = $this->Pagina_model->get_slogan();
-        $data['puritano']  = $this->Pagina_model->get_puritano();
-        $data['servicios'] = $this->Pagina_model->get_servicios();
-        $data['somos']     = $this->Pagina_model->get_somos();
-        $data['terreno']   = $this->Pagina_model->get_terreno();
+    $data = $this->_datos_layout();
+    $data['slogan']    = $this->Pagina_model->Obtener_slogan();
+    $data['puritano']  = $this->Pagina_model->Obtener_puritano();
+    $data['servicios'] = $this->Pagina_model->Obtener_servicios();
+    $data['somos']     = $this->Pagina_model->Obtener_somos();
+    $data['terreno']   = $this->Pagina_model->Obtener_terreno();
 
-        $this->load->view('dunosusa/home', $data);
-    }
+    $this->load->view('dunosusa/home', $data);
+}
 
     public function nosotros() {
         $data = $this->_datos_layout();
