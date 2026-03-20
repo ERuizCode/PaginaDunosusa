@@ -2,15 +2,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const links = document.querySelectorAll('nav a');
     const secciones = document.querySelectorAll('section[id]');
-    let scrolleando = false; // ← bandera
+    let scrolleando = false;
+
+    // Mapeo: qué sección activa qué link del nav (por texto del link)
+    const mapaSeccionNav = {
+        'slogan-principal':  'Inicio',
+        'puritano':          'Inicio',
+        'nuestros-servicios':'Inicio',
+        'somos-dunosusa':    'Nosotros',
+        'ofrece-terreno':    'Inicio'
+    };
+
+    function quitarActivos() {
+        links.forEach(link => link.classList.remove('activo'));
+    }
+
+    function resaltarPorTexto(texto) {
+        links.forEach(link => {
+            if (link.textContent.trim() === texto) {
+                link.classList.add('activo');
+            }
+        });
+    }
 
     const observer = new IntersectionObserver((entries) => {
-        if (scrolleando) return; // ← si se hizo click, ignora el observer
+        if (scrolleando) return;
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                links.forEach(link => link.classList.remove('activo'));
-                const linkActivo = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-                if (linkActivo) linkActivo.classList.add('activo');
+                const seccionId = entry.target.id;
+                const navTexto = mapaSeccionNav[seccionId];
+                if (navTexto) {
+                    quitarActivos();
+                    resaltarPorTexto(navTexto);
+                }
             }
         });
     }, {
@@ -27,14 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 const destino = document.querySelector(href);
                 if (destino) {
-                    // Resaltar inmediato y bloquear observer
-                    links.forEach(l => l.classList.remove('activo'));
+                    quitarActivos();
                     this.classList.add('activo');
-
-                    scrolleando = true; // ← Bloquea el observer
+                    scrolleando = true;
                     destino.scrollIntoView({ behavior: 'smooth' });
-
-                    // Desbloquea observer después de que termina el scroll
                     setTimeout(() => { scrolleando = false; }, 800);
                 }
             }
