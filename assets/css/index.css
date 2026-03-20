@@ -112,7 +112,7 @@ header a{
 }
 
 header a.activo {
-    color: #e1251b; /**/
+    color: #e1251b; 
     background-color: rgba(245, 245, 245, 0.9);
     border-radius: 20px;
     padding: 5px 15px;
@@ -208,6 +208,12 @@ header a:focus {
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+}
+#nuestros-servicios .carta button {
+    margin-top: auto;
 }
 
 #nuestros-servicios .carta:hover {
@@ -524,7 +530,7 @@ footer{
     #puritano .texto{
         width: 50%;
         max-width: 600px;
-        text-align: initial;
+        text-align: justify;
         padding-left: 30px;
         display: flex;
         flex-direction: column;
@@ -612,7 +618,7 @@ footer{
     #somos-dunosusa .texto{
         width: 50%;
         max-width: 600px;
-        text-align: initial;
+        text-align: justify;
         padding-left: 30px;
         display: flex;
         flex-direction: column;
