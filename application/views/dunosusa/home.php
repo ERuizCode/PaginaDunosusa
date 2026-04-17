@@ -1,15 +1,15 @@
 <?php $this->load->view('dunosusa/secciones/header'); ?>
 
-<section id="slogan-principal">
+<section id="slogan-principal" style="background-image: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<?= base_url($slogan->imagen) ?>');">
     <h1><?= $slogan->titulo ?></h1>
     <button tabindex="8"><?= $slogan->texto_boton ?></button>
 </section>
 
 <section id="puritano">
     <div class="container">
-        <div class="img-container"></div>
+        <div class="img-container" style="background-image: url('<?= base_url($puritano->imagen) ?>');"></div>
         <div class="texto">
-            <h2>Nuestro Producto<span class="color-puritano"><br><?= $puritano->titulo ?></span></h2>
+            <h2><?= str_replace('El Puritano','<span class="color-puritano">El Puritano</span>',$puritano->titulo) ?></h2>
             <p><?= $puritano->parrafo ?></p>
         </div>
     </div>
@@ -17,10 +17,10 @@
 
 <section id="nuestros-servicios">
     <div class="container">
-        <h2>Nuestros Servicios</h2>
+        <h2><?= $nuservicio->titulo ?></h2>
         <div class="servicios">
             <?php foreach($servicios as $i => $servicio): ?>
-            <div class="carta">
+            <div class="carta" style="background-image: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<?= base_url($servicio->imagen) ?>');">
                 <h3><?= $servicio->titulo ?></h3>
                 <p><?= $servicio->parrafo ?></p>
                 <button tabindex="<?= 9 + $i ?>"><?= $servicio->texto_boton ?></button>
@@ -36,13 +36,13 @@
             <h2><?= $somos->titulo ?></h2>
             <p><?= $somos->parrafo ?></p>
         </div>
-        <div class="img-container"></div>
+        <div class="img-container" style="background-image: url('<?= base_url($somos->imagen) ?>');"></div>
     </div>
 </section>
 
-<section id="ofrece-terreno">
+<section id="ofrece-terreno" style="background-image: url('<?= base_url($terreno->imagen) ?>');">
     <h2><?= $terreno->titulo ?></h2>
-    <button tabindex="12"><?= $terreno->texto_boton ?></button>
+    <button tabindex="12"><?= $terreno->parrafo ?></button>
 </section>
 
 <a href="#" class="boton-accesibilidad">

@@ -7,68 +7,30 @@ class Pagina_model extends CI_Model {
         parent::__construct();
     }
 
-    public function Obtener_slogan() {
-        $query = $this->db->query("CALL Obtener_slogan()");
-        $resultado = $query->row();
+    private function _call($procedure, $multiple = false) {
+        $query     = $this->db->query("CALL $procedure");
+        $resultado = $multiple ? $query->result() : $query->row();
         $this->db->conn_id->next_result();
         $query->free_result();
         return $resultado;
     }
 
-    public function Obtener_puritano() {
-        $query = $this->db->query("CALL Obtener_puritano()");
-        $resultado = $query->row();
+    private function _call_param($procedure, $param, $multiple = false) {
+        $query     = $this->db->query("CALL $procedure(?)", [$param]);
+        $resultado = $multiple ? $query->result() : $query->row();
         $this->db->conn_id->next_result();
         $query->free_result();
         return $resultado;
     }
 
-    public function Obtener_servicios() {
-        $query = $this->db->query("CALL Obtener_servicios()");
-        $resultado = $query->result();
-        $this->db->conn_id->next_result();
-        $query->free_result();
-        return $resultado;
-    }
+    public function Obtener_slogan()             { return $this->_call('Obtener_slogan()'); }
+    public function Obtener_servicios()          { return $this->_call('Obtener_servicios()', true); }
+    public function Obtener_header_nav()         { return $this->_call('Obtener_header_nav()', true); }
+    public function Obtener_footer_contacto()    { return $this->_call('Obtener_footer_contacto()', true); }
+    public function Obtener_footer_ubicaciones() { return $this->_call('Obtener_footer_ubicaciones()', true); }
+    public function Obtener_footer_redes()       { return $this->_call('Obtener_footer_redes()', true); }
 
-    public function Obtener_somos() {
-        $query = $this->db->query("CALL Obtener_somos()");
-        $resultado = $query->row();
-        $this->db->conn_id->next_result();
-        $query->free_result();
-        return $resultado;
+    public function Obtener_seccion($tipo) {
+        return $this->_call_param('Obtener_seccion', $tipo);
     }
-
-    public function Obtener_terreno() {
-        $query = $this->db->query("CALL Obtener_terreno()");
-        $resultado = $query->row();
-        $this->db->conn_id->next_result();
-        $query->free_result();
-        return $resultado;
-    }
-
-    public function Obtener_header_nav() {
-        $query = $this->db->query("CALL Obtener_header_nav()");
-        $resultado = $query->result();
-        $this->db->conn_id->next_result();
-        $query->free_result();
-        return $resultado;
-    }
-
-    public function Obtener_footer_contacto() {
-        $query = $this->db->query("CALL Obtener_footer_contacto()");
-        $resultado = $query->row();
-        $this->db->conn_id->next_result();
-        $query->free_result();
-        return $resultado;
-    }
-
-    public function Obtener_footer_ubicaciones() {
-        $query = $this->db->query("CALL Obtener_footer_ubicaciones()");
-        $resultado = $query->result();
-        $this->db->conn_id->next_result();
-        $query->free_result();
-        return $resultado;
-    }
-
 }

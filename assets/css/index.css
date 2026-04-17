@@ -6,8 +6,8 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+    font-family: 'Lora', Georgia, serif;
     margin: 0;
 }
 
@@ -64,7 +64,22 @@ button:focus {
 
 }
 
+.logo-link:hover,
+.logo-link:focus,
+.logo-link:active,
+.logo-link:visited {
+    background: none !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
 
+.logo-link img.logo:hover {
+    opacity: 1 !important;
+    filter: none !important;
+}
 
 header {
     background-color: #e1251b;
@@ -85,7 +100,7 @@ header .logo{
 
 header .container{
     display: flex;
-    flex-direction: column;   /* ← logo arriba, nav abajo */
+    flex-direction: column;   
     align-items: center;    
     
 }
@@ -152,12 +167,7 @@ header a:focus {
     text-align: center;
     flex-direction: column;
     min-height: 80vh;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/assets/media/comprar-cropped.png");
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -221,33 +231,7 @@ header a:focus {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);         
 }
 
-.carta:first-child{
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/assets/media/precios.jpg");
 
-}
-
-.carta:nth-child(2){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/assets/media/ubicacion.jpg");
-}
-
-.carta:nth-child(3){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    ),url("/assets/media/app.jpg");
-
-}
 
 
 #somos-dunosusa .container{
@@ -261,7 +245,7 @@ header a:focus {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url(/assets/media/final-terreno.jpg);
+    
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -458,9 +442,116 @@ footer{
     
 }
 
+#externos-page {
+    min-height: 70vh;
+    /* ← sin padding-top ni margin-top aquí */
+}
+
+.externos-barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: #e1251b;
+    padding: 0.8rem 1rem;
+    flex-wrap: wrap;
+    min-height: 60px;
+    margin-top: 155px; /* ← el offset va aquí, en la barra */
+}
+
+.externos-barra-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.externos-barra-item span { display: none; }
+
+.externos-barra-item img {
+    width: 70px;
+    height: 35px;
+    object-fit: contain;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.externos-barra-item:hover img {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+
+.externo-seccion {
+    padding: 1.5rem 1rem;
+    scroll-margin-top: 280px; /* ← mismo que margin-top del page */
+}
+
+.seccion-par   { background-color: #ffffff; }
+.seccion-impar { background-color: #faf0f0; }
+
+.externo-contenido {
+    display: flex;
+    flex-direction: column;   /* ← columna en móvil */
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.seccion-impar .externo-contenido {
+    flex-direction: column;   /* ← también columna en móvil */
+}
+
+.externo-img {
+    width: 100%;
+    min-height: 200px;
+    max-height: 260px;     /* ← limita altura en móvil */
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #eee;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.externo-texto { width: 100%; }
+
+.externo-texto h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c0392b;
+    margin-bottom: 0.75rem;
+}
+
+.externo-texto p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #000000;
+}
+
+#externos-page .externo-texto {
+    text-align: center;
+}
+
+#externos-page .externo-texto p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #000000;
+    text-align: center;
+    margin-inline: auto; /* centra el bloque de texto */
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Para dispositivos que tengan un mayor a 850px de ancho */
 @media (min-width: 850px){
+
 
     body {
         padding-top: 0px;
@@ -474,7 +565,8 @@ footer{
     header nav{
         flex-direction: row;     
         flex-wrap: nowrap;       
-        gap: 10px;         
+        gap: 10px;  
+        margin-left: auto;       
     }
     header a {
         font-size: 0.99em;  
@@ -502,12 +594,6 @@ footer{
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/assets/media/comprar.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -538,11 +624,13 @@ footer{
     }
 
     #puritano h2{
+        white-space: nowrap;
+        font-size: clamp(1rem, 2.5vw, 2.7em);
         margin-top: 0px;
     }
 
     #puritano .img-container{
-        background-image: url("/assets/media/puritano.jpg");
+        
         background-size: cover;
         background-position: center center;
         height: 400px;
@@ -577,34 +665,7 @@ footer{
         box-shadow: 2px 2px 10px rgba(116, 17, 17, 0.5);
     }
 
-    .carta:first-child{
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0),
-            rgba(0,0,0,0)
-        )
-        ,url("/assets/media/precios-cropped.jpg");
 
-    }
-
-    .carta:nth-child(2){
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0),
-            rgba(0,0,0,0)
-        )
-        ,url("/assets/media/ubicacion-cropped.jpg");
-    }
-
-    .carta:nth-child(3){
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0),
-            rgba(0,0,0,0)
-        )
-        ,url("/assets/media/app-cropped.jpg");
-
-    }
 
     #somos-dunosusa .container{
         display: flex;
@@ -630,7 +691,7 @@ footer{
     }
 
     #somos-dunosusa .img-container{
-        background-image: url("/assets/media/somo-dunosusa.jpg");
+        
         background-size: cover;
         background-position: center center;
         height: 400px;
@@ -650,6 +711,69 @@ footer{
     footer .container{
         justify-content: flex-end;
     }
+
+    /* Externos escritorio */
+    #externos-page {
+    min-height: 70vh;
+    }
+
+    .externos-barra {
+    margin-top: 60px; /* ← altura del header en escritorio */
+    gap: 3rem;
+    padding: 1rem 2rem;
+    min-height: 70px;
+    }
+
+    .externos-barra-item img {
+        width: 90px;
+        height: 45px;
+    }
+
+    .externo-seccion {
+        padding: 5rem 2rem;
+        scroll-margin-top: 160px;
+    }
+
+    .externo-contenido {
+        flex-direction: row;      /* ← fila en escritorio */
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .seccion-impar .externo-contenido {
+        flex-direction: row-reverse;  /* ← alterna en escritorio */
+    }
+
+    .externo-img {
+        flex: 1;
+        min-height: 320px;
+        border-radius: 16px;
+    }
+
+    .externo-texto {
+        flex: 1;
+    }
+
+    .externo-texto h2 { font-size: 2rem; }
+    .externo-texto p  { font-size: 1.05rem; }
+
+    #externos-page .externo-texto {
+    text-align: left;
+    }
+
+    #externos-page .externo-texto p {
+        font-size: 1.35rem;
+        text-align: left;
+        margin-inline: 0;
+    }
+
+
+
+
+
+
+
+
 
 }
 

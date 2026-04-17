@@ -62,3 +62,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+// Smooth scroll para barra de externos
+document.querySelectorAll('.externos-barra-item').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const destino = document.querySelector(this.getAttribute('href'));
+        if (destino) {
+            destino.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
