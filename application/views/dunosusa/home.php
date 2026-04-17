@@ -2,7 +2,9 @@
 
 <section id="slogan-principal" style="background-image: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<?= base_url($slogan->imagen) ?>');">
     <h1><?= $slogan->titulo ?></h1>
-    <button tabindex="8"><?= $slogan->texto_boton ?></button>
+    <a href="<?= base_url('welcome/productos') ?>">
+        <button tabindex="8"><?= $slogan->texto_boton ?></button>
+    </a>
 </section>
 
 <section id="puritano">
@@ -20,10 +22,16 @@
         <h2><?= $nuservicio->titulo ?></h2>
         <div class="servicios">
             <?php foreach($servicios as $i => $servicio): ?>
-            <div class="carta" style="background-image: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<?= base_url($servicio->imagen) ?>');">
+            <div class="carta" 
+                 style="background-image: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('<?= base_url($servicio->imagen) ?>');"
+                 onclick="window.location='<?= base_url($servicio->enlace) ?>'"
+                 role="button"
+                 tabindex="<?= 9 + $i ?>">
                 <h3><?= $servicio->titulo ?></h3>
                 <p><?= $servicio->parrafo ?></p>
-                <button tabindex="<?= 9 + $i ?>"><?= $servicio->texto_boton ?></button>
+                <button tabindex="-1" onclick="event.stopPropagation(); window.location='<?= base_url($servicio->enlace) ?>'">
+                    <?= $servicio->texto_boton ?>
+                </button>
             </div>
             <?php endforeach; ?>
         </div>

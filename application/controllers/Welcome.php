@@ -50,7 +50,21 @@ class Welcome extends CI_Controller {
     $data = $this->_datos_layout();  // ← esto faltaba
     $data['sucursales'] = $this->Sucursales_model->get_sucursales();
     $this->load->view('dunosusa/sucursales', $data);
+
 }
+    public function bolsadetrabajo() {
+        $data = $this->_datos_layout();
+        $this->load->view('dunosusa/bolsadetrabajo', $data);
+    }
+
+    public function contacto() {
+        $data = $this->_datos_layout();
+        $this->load->view('dunosusa/contacto', $data);
+    }
+
+
+
+
 
     public function productos() {
     $data = $this->_datos_layout();
@@ -78,6 +92,10 @@ class Welcome extends CI_Controller {
 
     $this->load->view('dunosusa/productos', $data);
     }
+
+
+
+
 
 
 }
