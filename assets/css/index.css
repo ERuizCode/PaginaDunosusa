@@ -664,7 +664,7 @@ footer{
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    justify-content: flex-start;
+    justify-content: center; /* ← cambia flex-start por center */
 }
 
 /* Buscador */
@@ -919,8 +919,13 @@ footer{
     color: #e1251b;
     margin: 0;
 }
-
-
+#externos-page .externo-texto p {
+    font-size: 0.92rem;  /* ← cambia de 1.2rem */
+    line-height: 1.7;
+    color: #000000;
+    text-align: center;
+    margin-inline: auto;
+}
 
 /* Para dispositivos que tengan un mayor a 850px de ancho */
 @media (min-width: 850px){
@@ -1089,6 +1094,9 @@ footer{
     #externos-page {
     min-height: 70vh;
     }
+    #externos-page .externo-texto p {
+    font-size: 1.35rem;  /* escritorio */
+    }   
 
     .externos-barra {
     margin-top: 60px; /* ← altura del header en escritorio */
@@ -1131,13 +1139,14 @@ footer{
     .externo-texto p  { font-size: 1.05rem; }
 
     #externos-page .externo-texto {
-    text-align: left;
+    text-align: justify;
     }
 
     #externos-page .externo-texto p {
-        font-size: 1.35rem;
-        text-align: left;
-        margin-inline: 0;
+    font-size: 1rem;     /* ← cambia de 1.35rem */
+    text-align: justify;
+    margin-inline: 0;
+
     }
 
     /* Sucursales escritorio */
