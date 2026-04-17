@@ -654,10 +654,271 @@ footer{
 .sucursal-popup a:hover { text-decoration: underline; }
 
 
+#productos-page {
+    margin-top: 155px;
+}
 
+.productos-barra {
+    background-color: #e87722;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: flex-start;
+}
 
+/* Buscador */
+.productos-buscador {
+    flex: 1;
+    display: flex;
+    max-width: 700px;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
 
+.productos-buscador input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.65rem 1.2rem;
+    font-size: 1rem;
+    font-family: 'Lora', Georgia, serif;
+    color: #333;
+}
 
+.productos-buscador button {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 1rem !important;
+    cursor: pointer;
+    color: #e87722 !important;
+    border-radius: 0 !important;
+    transition: color 0.2s ease !important;
+}
+
+.productos-buscador button:hover,
+.productos-buscador button:focus {
+    transform: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    color: #c9621a !important;
+}
+
+/* Botón categorías */
+.cat-dropdown-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.btn-sidebar-toggle {
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    background: white !important;
+    border: none !important;
+    color: #e87722 !important;
+    border-radius: 20px !important;
+    font-size: 0.88rem !important;
+    font-weight: 700;
+    padding: 0.5rem 0.9rem !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s !important;
+}
+
+.btn-sidebar-toggle:hover,
+.btn-sidebar-toggle:focus {
+    background: #f5f5f5 !important;
+    transform: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 16px;
+    flex-shrink: 0;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 2px;
+    background: #e87722;
+    border-radius: 2px;
+}
+
+.toggle-chevron {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    line-height: 1;
+}
+
+.toggle-chevron.abierto {
+    transform: rotate(90deg);
+}
+
+/* Dropdown panel — aplica en AMBOS tamaños */
+.cat-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    min-width: 240px;
+    max-width: 320px;
+    max-height: 70vh;
+    overflow-y: auto;
+    z-index: 200;
+    padding: 0.5rem 0;
+}
+
+.cat-dropdown.visible {
+    display: block;
+}
+
+.cat-dropdown-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.55rem 1rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: background 0.15s;
+}
+
+.cat-dropdown-link:hover,
+.cat-dropdown-item.activa > .cat-dropdown-link {
+    background: #fdf0f0;
+    color: #e1251b;
+    font-weight: 700;
+}
+
+.cat-arrow {
+    color: #ccc;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.cat-dropdown-item.activa > .cat-dropdown-link .cat-arrow {
+    color: #e1251b;
+    transform: rotate(90deg);
+    display: inline-block;
+}
+
+.subcat-dropdown {
+    display: flex;
+    flex-direction: column;
+    background: #fdf8f8;
+    border-top: 1px solid #f5e0e0;
+    border-bottom: 1px solid #f5e0e0;
+    padding: 0.3rem 0;
+}
+
+.subcat-dropdown-link {
+    padding: 0.4rem 1.5rem;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.85rem;
+    transition: background 0.15s;
+}
+
+.subcat-dropdown-link:hover,
+.subcat-dropdown-link.activa {
+    background: #faeaea;
+    color: #e1251b;
+    font-weight: 600;
+}
+
+/* Sidebar siempre oculto (ya no se usa) */
+.productos-sidebar        { display: none !important; }
+.sidebar-toggle-bar       { display: none !important; }
+
+/* Layout y grid */
+.productos-layout {
+    padding: 1rem;
+}
+
+.productos-contenido { flex: 1; }
+
+.productos-titulo {
+    font-size: 1.3rem;
+    color: #e1251b;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.productos-subtitulo {
+    font-size: 1rem;
+    color: #777;
+    font-weight: 400;
+}
+
+.productos-intro  { color: #666; font-size: 1rem; }
+.productos-vacio  { color: #888; font-size: 1rem; padding: 2rem 0; }
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.producto-card {
+    border: 1px solid #f0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
+}
+
+.producto-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+
+.producto-img-wrap {
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+    padding: 0.5rem;
+}
+
+.producto-img-wrap img {
+    max-height: 110px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.producto-info {
+    padding: 0.5rem 0.65rem 0.7rem;
+    border-top: 1px solid #f5e8e8;
+}
+
+.producto-nombre {
+    font-size: 0.8rem;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+    min-height: 2.6em;
+}
+
+.producto-precio {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #e1251b;
+    margin: 0;
+}
 
 
 
@@ -918,11 +1179,138 @@ footer{
     margin: 0; /* ← quita el margin anterior */
     }
 
+    #productos-page {
+        margin-top: 60px;
+    }
+
+     .productos-layout {
+        padding: 1.5rem 2rem;
+    }
 
 
+    .productos-sidebar.visible {
+        display: block;
+        width: 240px;
+        min-width: 220px;
+        border-bottom: none;
+        border-right: 2px solid #e1251b;
+        padding-right: 1rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        position: sticky;
+        top: 80px;
+        max-height: 80vh;
+        overflow-y: auto;
+        flex-shrink: 0;
+    }
 
 
+    .productos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1.2rem;
+    }
 
+    .sidebar-toggle-bar {
+        display: none;
+    }
+
+    .productos-sidebar {
+        display: block !important;
+        width: 240px;
+        min-width: 220px;
+        border-bottom: none;
+        border-right: 2px solid #e1251b;
+        padding-right: 1rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        position: sticky;
+        top: 80px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    /* Dropdown wrapper */
+    .cat-dropdown-wrap {
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    /* Panel dropdown */
+    .cat-dropdown {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+        min-width: 240px;
+        max-width: 320px;
+        max-height: 70vh;
+        overflow-y: auto;
+        z-index: 200;
+        padding: 0.5rem 0;
+    }
+
+    .cat-dropdown.visible {
+        display: block;
+    }
+
+    /* Ítem de categoría */
+    .cat-dropdown-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.55rem 1rem;
+        text-decoration: none;
+        color: #333;
+        font-size: 0.92rem;
+        font-weight: 500;
+        transition: background 0.15s;
+    }
+
+    .cat-dropdown-link:hover,
+    .cat-dropdown-item.activa > .cat-dropdown-link {
+        background: #fdf0f0;
+        color: #e1251b;
+        font-weight: 700;
+    }
+
+    .cat-arrow {
+        color: #ccc;
+        font-size: 1rem;
+    }
+
+    .cat-dropdown-item.activa > .cat-dropdown-link .cat-arrow {
+        color: #e1251b;
+        transform: rotate(90deg);
+        display: inline-block;
+    }
+
+    /* Subcategorías dentro del dropdown */
+    .subcat-dropdown {
+        display: flex;
+        flex-direction: column;
+        background: #fdf8f8;
+        border-top: 1px solid #f5e0e0;
+        border-bottom: 1px solid #f5e0e0;
+        padding: 0.3rem 0;
+    }
+
+    .subcat-dropdown-link {
+        padding: 0.4rem 1.5rem;
+        text-decoration: none;
+        color: #555;
+        font-size: 0.85rem;
+        transition: background 0.15s;
+    }
+
+    .subcat-dropdown-link:hover,
+    .subcat-dropdown-link.activa {
+        background: #faeaea;
+        color: #e1251b;
+        font-weight: 600;
+    }
 
 }
 
