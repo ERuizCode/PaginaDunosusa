@@ -1143,13 +1143,13 @@ footer{
     }
 
     #externos-page .externo-texto p {
-    font-size: 1rem;     /* ← cambia de 1.35rem */
+    font-size: 1rem;    
     text-align: justify;
     margin-inline: 0;
 
     }
 
-    /* Sucursales escritorio */
+    
     #sucursales-page {
         margin-top: 60px;
     }
@@ -1159,11 +1159,11 @@ footer{
     color: rgb(245,245,245);
     text-align: center;
     padding: 1.2rem 1rem 1.8rem;
-    margin-bottom: 0; /* ← era 2rem, ponlo en 0 */
+    margin-bottom: 0; 
     }
 
-    .sucursales-hero h1 { font-size: 2rem; } /* ← reducido de 3rem */
-    .sucursales-hero p  { font-size: 1rem; } /* ← reducido de 1.2rem */  
+    .sucursales-hero h1 { font-size: 2rem; } 
+    .sucursales-hero p  { font-size: 1rem; }  
 
     .sucursales-layout {
         flex-direction: row;
@@ -1185,7 +1185,7 @@ footer{
     flex: 1;
     height: 100%;
     width: auto;
-    margin: 0; /* ← quita el margin anterior */
+    margin: 0; 
     }
 
     #productos-page {
