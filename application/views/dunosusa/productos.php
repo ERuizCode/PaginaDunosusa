@@ -5,7 +5,7 @@
     <!-- BARRA NARANJA -->
     <div class="productos-barra">
 
-        <!-- BOTÓN CATEGORÍAS DESPLEGABLE -->
+        <!-- BOTÓN CAT DESPLEGABLE -->
         <div class="cat-dropdown-wrap">
             <button type="button" id="btn-categorias" class="btn-sidebar-toggle" aria-expanded="false">
                 <span class="hamburger-icon"><span></span><span></span><span></span></span>
