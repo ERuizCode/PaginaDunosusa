@@ -539,7 +539,119 @@ footer{
     margin-inline: auto; /* centra el bloque de texto */
 }
 
+/* ── SUCURSALES ── */
+#sucursales-page {
+    margin-top: 155px; /* igual que externos en móvil */
+    min-height: 80vh;
+}
 
+.sucursales-hero {
+    background-color: #e1251b;
+    color: rgb(245,245,245);
+    text-align: center;
+    padding: 1.2rem 1rem 1.8rem; /* ← reducido de 2rem/3rem */
+    margin-bottom: 2rem;
+}
+
+.sucursales-hero h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.6rem; /* ← reducido de 2rem */
+}
+
+.sucursales-hero p {
+    margin: 0;
+    font-size: 0.9rem; /* ← reducido de 1rem */
+    opacity: 0.85;
+}
+
+.sucursales-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+}
+
+.sucursales-lista {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 40vh;
+    border-bottom: 2px solid #e1251b;
+}
+
+.sucursal-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-bottom: 1px solid #f0e0e0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sucursal-card:hover,
+.sucursal-card.activa {
+    background-color: #fdf0f0;
+    border-left: 4px solid #e1251b;
+}
+
+
+
+.sucursal-card-info h3 {
+    font-size: 0.95rem;
+    margin: 0 0 0.2rem;
+    color: #e1251b;
+    font-weight: 700;
+}
+
+.sucursal-card-info p {
+    font-size: 0.82rem;
+    margin: 0;
+    color: #555;
+    line-height: 1.4;
+}
+
+.sucursal-horario {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 0.2rem;
+    display: block;
+}
+
+.sucursales-mapa-wrapper {
+    position: relative;
+    width: 100%;   /* ← quita el calc(100% - 2rem) */
+    height: 50vh;
+    margin: 0;     /* ← quita el margin: 0 1rem */
+}
+
+.sucursales-mapa {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.sucursal-popup {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 220px;
+    max-width: 90%;
+    z-index: 10;
+}
+
+.sucursal-popup strong { color: #e1251b; font-size: 0.95rem; }
+.sucursal-popup span   { font-size: 0.82rem; color: #444; }
+.sucursal-popup a      { font-size: 0.85rem; color: #036431; font-weight: bold; text-decoration: none; }
+.sucursal-popup a:hover { text-decoration: underline; }
 
 
 
@@ -767,7 +879,44 @@ footer{
         margin-inline: 0;
     }
 
+    /* Sucursales escritorio */
+    #sucursales-page {
+        margin-top: 60px;
+    }
 
+    .sucursales-hero {
+    background-color: #e1251b;
+    color: rgb(245,245,245);
+    text-align: center;
+    padding: 1.2rem 1rem 1.8rem;
+    margin-bottom: 0; /* ← era 2rem, ponlo en 0 */
+    }
+
+    .sucursales-hero h1 { font-size: 2rem; } /* ← reducido de 3rem */
+    .sucursales-hero p  { font-size: 1rem; } /* ← reducido de 1.2rem */  
+
+    .sucursales-layout {
+        flex-direction: row;
+        height: 75vh;
+        padding: 0;
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+
+    .sucursales-lista {
+        width: 340px;
+        min-width: 300px;
+        max-height: 100%;
+        border-bottom: none;
+        border-right: 2px solid #e1251b;
+    }
+
+    .sucursales-mapa-wrapper {
+    flex: 1;
+    height: 100%;
+    width: auto;
+    margin: 0; /* ← quita el margin anterior */
+    }
 
 
 

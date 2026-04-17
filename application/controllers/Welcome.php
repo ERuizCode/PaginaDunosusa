@@ -42,7 +42,13 @@ class Welcome extends CI_Controller {
     $this->load->view('dunosusa/externos', $data);
     }
 
-
+    public function sucursales()
+{
+    $this->load->model('Sucursales_model');
+    $data = $this->_datos_layout();  // ← esto faltaba
+    $data['sucursales'] = $this->Sucursales_model->get_sucursales();
+    $this->load->view('dunosusa/sucursales', $data);
+}
 
 
 
