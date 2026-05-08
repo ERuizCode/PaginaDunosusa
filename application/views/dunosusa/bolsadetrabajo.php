@@ -93,7 +93,22 @@
 
 <?php $this->load->view('dunosusa/secciones/footer'); ?>
 <script>
-$(document).ready( function () {
-    $('#tblbolsa').DataTable();
-} );
+$(document).ready(function () {
+    $('#tblbolsa').DataTable({
+        language: {
+            lengthMenu: "Mostrar _MENU_ vacantes por página",
+            search: "Buscar:",
+            info: "Mostrando _START_ a _END_ de _TOTAL_ vacantes",
+            paginate: {
+                first: "Primero",
+                last: "Último",
+                next: "›",
+                previous: "‹"
+            },
+            zeroRecords: "No se encontraron resultados",
+            infoEmpty: "No hay vacantes disponibles",
+            infoFiltered: "(filtrado de _MAX_ vacantes)"
+        }
+    });
+});
 </script>

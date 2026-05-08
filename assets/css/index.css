@@ -900,7 +900,7 @@ footer{
 
 .productos-titulo {
     font-size: 1.3rem;
-    color: #e1251b;
+    color: #;
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -916,7 +916,7 @@ footer{
 
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);;
     gap: 1rem;
 }
 
@@ -927,21 +927,22 @@ footer{
     background: white;
     box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     transition: box-shadow 0.2s;
+    min-width: 0;
 }
 
 .producto-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
 
 .producto-img-wrap {
-    background: #fafafa;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 130px;
+    height: 200px;
     padding: 0.5rem;
 }
 
 .producto-img-wrap img {
-    max-height: 110px;
+    max-height: 180px;
     max-width: 100%;
     object-fit: contain;
 }
@@ -1110,26 +1111,27 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.8rem 1rem;
+    padding: 0.2rem 1rem;
     border-bottom: 1.5px solid rgba(0,0,0,0.10);
 }
 
 .auth-logo {
-    height: 60px;
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
 
 /* CUERPO DEL FORMULARIO */
 .auth-body {
-    padding: 2rem 2rem 2rem;
+    padding: 0.7rem 2rem;
 }
 
 .auth-titulo {
     font-size: 1.3rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
     text-align: center;
 }
 
@@ -1939,8 +1941,8 @@ footer{
 
 
     .productos-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 1.2rem;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 1rem;
     }
 
     .sidebar-toggle-bar {
