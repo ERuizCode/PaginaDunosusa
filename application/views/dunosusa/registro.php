@@ -30,34 +30,39 @@
                     <div class="auth-campo">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre"
-                               placeholder="Tu nombre" required autocomplete="given-name">
+                               placeholder="Tu nombre" required autocomplete="given-name"
+                               maxlength="80">
                     </div>
 
                     <div class="auth-fila">
                         <div class="auth-campo">
                             <label for="ap_paterno">Apellido paterno</label>
                             <input type="text" id="ap_paterno" name="ap_paterno"
-                                   placeholder="Apellido paterno" required>
+                                   placeholder="Apellido paterno" required
+                                   maxlength="80">
                         </div>
 
                         <div class="auth-campo">
                             <label for="ap_materno">Apellido materno</label>
                             <input type="text" id="ap_materno" name="ap_materno"
-                                   placeholder="Apellido materno" required>
+                                   placeholder="Apellido materno" required
+                                   maxlength="80">
                         </div>
                     </div>
 
                     <div class="auth-campo">
                         <label for="correo">Correo electrónico</label>
                         <input type="email" id="correo" name="correo"
-                               placeholder="tucorreo@ejemplo.com" required autocomplete="email">
+                               placeholder="tucorreo@ejemplo.com" required autocomplete="email"
+                                maxlength="150">
                     </div>
 
                     <div class="auth-campo">
                         <label for="password">Contraseña</label>
                         <div class="input-password-wrap">
                             <input type="password" id="password" name="password"
-                                   placeholder="••••••••" required autocomplete="new-password">
+                                   placeholder="••••••••" required autocomplete="new-password"
+                                   maxlength="255">
                             <button type="button" class="btn-toggle-pass"
                                     onclick="togglePass('password', this)"
                                     aria-label="Mostrar contraseña">
