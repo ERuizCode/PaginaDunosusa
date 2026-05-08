@@ -30,15 +30,16 @@
 
                     <div class="auth-campo">
                         <label for="correo">Correo electrónico</label>
-                        <input type="email" id="correo" name="correo"
-                               placeholder="tucorreo@ejemplo.com" required autocomplete="email">
+                        <input type="email" id="correo" name="correo" required autocomplete="email"
+                        maxlength="150">
                     </div>
 
                     <div class="auth-campo">
                         <label for="password">Contraseña</label>
                         <div class="input-password-wrap">
                             <input type="password" id="password" name="password"
-                                   placeholder="••••••••" required autocomplete="current-password">
+                                   placeholder="••••••••" required autocomplete="current-password"
+                                   maxlength="255">
 
                             <button type="button"
                                     class="btn-toggle-pass"
