@@ -54,12 +54,11 @@ class Welcome extends CI_Controller {
     public function contacto() {
     $this->load->model('Contacto_model');
     $data = $this->_datos_layout();
-
     $data['tipos']   = $this->Contacto_model->get_tipos();
     $data['enviado'] = false;
     $data['error']   = '';
 
-    if ($this->input->post('submit_contacto')) {
+    if ($this->input->server('REQUEST_METHOD') === 'POST') {
         $id_tipo     = (int) $this->input->post('id_tipo');
         $nombre      = trim($this->input->post('nombre'));
         $email       = trim($this->input->post('email'));
@@ -82,7 +81,6 @@ class Welcome extends CI_Controller {
         }
     }
 
-    // Solo carga la vista de contacto — el header y footer van DENTRO de la vista
     $this->load->view('dunosusa/contacto', $data);
     }
 
@@ -120,13 +118,14 @@ class Welcome extends CI_Controller {
     public function login() {
     $this->load->model('Usuarios_model');
     $data = $this->_datos_layout();
+    $data['error_login'] = '';
 
-    if ($this->input->post('submit_login')) {
+    if ($this->input->server('REQUEST_METHOD') === 'POST') {
         $correo   = $this->input->post('correo');
         $password = $this->input->post('password');
         $token    = $this->input->post('g-recaptcha-response');
 
-        $captcha_ok = false;
+        $captcha_ok = true;
 
         if (!empty($token)) {
             $post_data = http_build_query([
@@ -134,19 +133,10 @@ class Welcome extends CI_Controller {
                 'response' => $token,
                 'remoteip' => $this->input->ip_address()
             ]);
-
-            $options = [
-                'http' => [
-                    'method'  => 'POST',
-                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                    'content' => $post_data
-                ]
-            ];
-
+            $options = ['http' => ['method' => 'POST', 'header' => "Content-type: application/x-www-form-urlencoded\r\n", 'content' => $post_data]];
             $context = stream_context_create($options);
             $verify  = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
             $captcha = json_decode($verify);
-
             if (!empty($captcha->success)) {
                 $captcha_ok = true;
             }
@@ -157,15 +147,12 @@ class Welcome extends CI_Controller {
         } else {
             $usuario = $this->Usuarios_model->buscar_por_correo($correo);
 
-            if ($usuario && password_verify($password, $usuario->password)) {
-                $this->session->set_userdata([
-                    'usuario_id'     => $usuario->id,
-                    'usuario_nombre' => $usuario->nombre,
-                    'logueado'       => true
-                ]);
-                redirect('welcome/home');
+            if (!$usuario) {
+                $data['error_login'] = 'El correo no está registrado.';
+            } elseif (!password_verify($password, $usuario->password)) {
+                $data['error_login'] = 'Contraseña incorrecta.';
             } else {
-                $data['error_login'] = 'Correo o contraseña incorrectos.';
+                redirect('welcome/home');
             }
         }
     }
@@ -177,7 +164,7 @@ class Welcome extends CI_Controller {
     $this->load->model('Usuarios_model');
     $data = $this->_datos_layout();
 
-    if ($this->input->post('submit_registro')) {
+    if ($this->input->server('REQUEST_METHOD') === 'POST') {
         $correo = $this->input->post('correo');
 
         if ($this->Usuarios_model->buscar_por_correo($correo)) {

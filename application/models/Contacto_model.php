@@ -8,21 +8,34 @@ class Contacto_model extends CI_Model {
     }
 
     public function get_tipos() {
-        $query = $this->db->query('CALL Obtener_contacto_tipos()');
-        return $query->result();
+        $conn  = $this->db->conn_id;
+        $res   = mysqli_query($conn, 'CALL Obtener_contacto_tipos()');
+        $datos = [];
+        while ($row = mysqli_fetch_object($res)) {
+            $datos[] = $row;
+        }
+        mysqli_free_result($res);
+        while (mysqli_more_results($conn)) {
+            mysqli_next_result($conn);
+        }
+        return $datos;
     }
 
     public function guardar($datos) {
-        $this->db->query(
-            'CALL Guardar_contacto(?, ?, ?, ?, ?, ?)',
-            [
-                $datos['id_tipo'],
-                $datos['nombre'],
-                $datos['email'],
-                $datos['telefono'],
-                $datos['asunto'],
-                $datos['comentarios']
-            ]
+        $conn = $this->db->conn_id;
+        $stmt = mysqli_prepare($conn, 'CALL Guardar_contacto(?, ?, ?, ?, ?, ?)');
+        mysqli_stmt_bind_param($stmt, 'isssss',
+            $datos['id_tipo'],
+            $datos['nombre'],
+            $datos['email'],
+            $datos['telefono'],
+            $datos['asunto'],
+            $datos['comentarios']
         );
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        while (mysqli_more_results($conn)) {
+            mysqli_next_result($conn);
+        }
     }
 }

@@ -1,93 +1,85 @@
 <?php $this->load->view('dunosusa/secciones/header', $data ?? []); ?>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <main id="contacto-page">
     <div class="contacto-layout">
 
         <!-- IZQUIERDA: Formulario -->
         <div class="contacto-form-wrap">
 
-            <?php if ($enviado): ?>
-                <div class="contacto-exito">
-                    ✅ ¡Tu mensaje fue enviado correctamente!<br>
-                    Nos pondremos en contacto contigo pronto.
-                </div>
-            <?php else: ?>
-
-                <?php if (!empty($error)): ?>
-                    <div class="contacto-error"><?= $error ?></div>
-                <?php endif; ?>
-
-                <form action="<?= base_url('welcome/contacto') ?>" method="POST" class="contacto-form">
-
-                    <h2 class="contacto-form-titulo">
-                        <span id="form-titulo">
-                            <?php
-                                $id_post = $this->input->post('id_tipo');
-                                $nombre_tipo = (!empty($tipos)) ? $tipos[0]->nombre : 'Contacto';
-                                foreach ($tipos as $t) {
-                                    if ($t->id == $id_post) { $nombre_tipo = $t->nombre; break; }
-                                }
-                                echo htmlspecialchars($nombre_tipo);
-                            ?>
-                        </span>
-                    </h2>
-
-                    <div class="contacto-campo">
-                        <label for="id_tipo">Tipo: <span>*</span></label>
-                        <select name="id_tipo" id="id_tipo" required
-                                onchange="document.getElementById('form-titulo').textContent = this.options[this.selectedIndex].text">
-                            <?php foreach ($tipos as $t): ?>
-                                <option value="<?= $t->id ?>"
-                                    <?= ($this->input->post('id_tipo') == $t->id) ? 'selected' : '' ?>>
-                                    <?= htmlspecialchars($t->nombre) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-
-                    <div class="contacto-campo">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre"
-                        maxlength="70"
-                               value="<?= htmlspecialchars($this->input->post('nombre') ?? '') ?>"
-                               required>
-                    </div>
-
-                    <div class="contacto-campo">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email"
-                               value="<?= htmlspecialchars($this->input->post('email') ?? '') ?>"
-                               required>
-                    </div>
-
-                    <div class="contacto-campo">
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel" id="telefono" name="telefono"
-                               value="<?= htmlspecialchars($this->input->post('telefono') ?? '') ?>">
-                    </div>
-
-                    <div class="contacto-campo">
-                        <label for="asunto">Asunto:</label>
-                        <input type="text" id="asunto" name="asunto"
-                               value="<?= htmlspecialchars($this->input->post('asunto') ?? '') ?>"
-                               required>
-                    </div>
-
-                    <div class="contacto-campo campo-textarea">
-                        <label for="comentarios">Comentarios:</label>
-                        <textarea id="comentarios" name="comentarios"
-                                  rows="5"
-                                  required><?= htmlspecialchars($this->input->post('comentarios') ?? '') ?></textarea>
-                    </div>
-
-                    <div class="contacto-btn-wrap">
-                        <div></div>
-                        <button type="submit" name="submit_contacto" class="contacto-btn">Enviar</button>
-                    </div>
-
-                </form>
-
+            <?php if (!empty($error)): ?>
+                <div class="contacto-error"><?= $error ?></div>
             <?php endif; ?>
+
+            <form action="<?= base_url('welcome/contacto') ?>" method="POST" class="contacto-form">
+
+                <h2 class="contacto-form-titulo">
+                    <span id="form-titulo">
+                        <?php
+                            $id_post = $this->input->post('id_tipo');
+                            $nombre_tipo = (!empty($tipos)) ? $tipos[0]->nombre : 'Contacto';
+                            foreach ($tipos as $t) {
+                                if ($t->id == $id_post) { $nombre_tipo = $t->nombre; break; }
+                            }
+                            echo htmlspecialchars($nombre_tipo);
+                        ?>
+                    </span>
+                </h2>
+
+                <div class="contacto-campo">
+                    <label for="id_tipo">Tipo: <span>*</span></label>
+                    <select name="id_tipo" id="id_tipo" required
+                            onchange="document.getElementById('form-titulo').textContent = this.options[this.selectedIndex].text">
+                        <?php foreach ($tipos as $t): ?>
+                            <option value="<?= $t->id ?>"
+                                <?= ($this->input->post('id_tipo') == $t->id) ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($t->nombre) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="contacto-campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="70"
+                           value="<?= htmlspecialchars($this->input->post('nombre') ?? '') ?>"
+                           required>
+                </div>
+
+                <div class="contacto-campo">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"
+                           value="<?= htmlspecialchars($this->input->post('email') ?? '') ?>"
+                           required>
+                </div>
+
+                <div class="contacto-campo">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono"
+                           value="<?= htmlspecialchars($this->input->post('telefono') ?? '') ?>">
+                </div>
+
+                <div class="contacto-campo">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto"
+                           value="<?= htmlspecialchars($this->input->post('asunto') ?? '') ?>"
+                           required>
+                </div>
+
+                <div class="contacto-campo campo-textarea">
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios"
+                              rows="5"
+                              required><?= htmlspecialchars($this->input->post('comentarios') ?? '') ?></textarea>
+                </div>
+
+                <div class="contacto-btn-wrap">
+                    <div></div>
+                    <button type="submit" name="submit_contacto" class="contacto-btn">Enviar</button>
+                </div>
+
+            </form>
         </div>
 
         <!-- DERECHA: Info Dunosusa -->
@@ -118,6 +110,20 @@
 
     </div>
 </main>
+
+<?php if ($enviado): ?>
+<script>
+    Swal.fire({
+        icon: "success",
+        title: "¡Mensaje enviado!",
+        text: "Nos pondremos en contacto contigo pronto.",
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        width: window.innerWidth < 600 ? '90%' : '32em'
+    });
+</script>
+<?php endif; ?>
 
 <a href="#" class="boton-accesibilidad">
     <img src="<?= base_url('assets/media/logoaccesibilidad.png') ?>" alt="accesibilidad">
