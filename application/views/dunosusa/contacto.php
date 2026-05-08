@@ -101,8 +101,8 @@
                 <div class="contacto-icono-wrap">🕐</div>
                 <div class="contacto-dato-texto">
                     <strong>Horarios:</strong>
-                    <p><strong>Tiendas:</strong><br>
-                       Atención a clientes de 07:00 a 22:00 hrs de Lunes a Domingo.<br>
+                    <p>
+                       Atención a clientes de 07:00 a 22:00 hrs de Lunes a Domingo.
                        Recepción de mercancía de 07:00 a 19:00 hrs de Lunes a Domingo.</p>
                 </div>
             </div>
