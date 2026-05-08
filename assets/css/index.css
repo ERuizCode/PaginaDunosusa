@@ -148,6 +148,7 @@ header a:hover{
 
     
 }
+
 header a:focus {
     /*Abajo Exterior para accesibilidad*/
     outline: 3px solid rgb(245, 245, 245); 
@@ -159,6 +160,32 @@ header a:focus {
     padding: 5px 15px;
 
 }
+nav {
+    align-items: center; /* ← asegura que todo en el nav se centre verticalmente */
+}
+.nav-perfil {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(245, 245, 245, 0.7);
+    color: rgb(245, 245, 245) !important;
+    padding: 0 !important;
+    margin-left: 0.5rem;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.nav-perfil:hover,
+.nav-perfil:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgb(245, 245, 245);
+    outline: none !important;
+}
+
+
 
 #slogan-principal{
     display: flex;
@@ -611,11 +638,27 @@ footer{
     line-height: 1.4;
 }
 
-.sucursal-horario {
-    font-size: 0.78rem;
-    color: #888;
-    margin-top: 0.2rem;
-    display: block;
+.sucursal-extra {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.sucursal-horario,
+.sucursal-telefono {
+    font-size: 15px;
+    color: #666;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sucursal-telefono {
+    font-weight: normal;
+    color: #666;
 }
 
 .sucursales-mapa-wrapper {
@@ -664,7 +707,10 @@ footer{
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    justify-content: center; /* ← cambia flex-start por center */
+    justify-content: center;
+    position: sticky;
+    top: 155px;        /* altura del header en móvil */
+    z-index: 99;       /* justo debajo del header que es z-index:100 */
 }
 
 /* Buscador */
@@ -684,7 +730,7 @@ footer{
     outline: none;
     padding: 0.65rem 1.2rem;
     font-size: 1rem;
-    font-family: 'Lora', Georgia, serif;
+    
     color: #333;
 }
 
@@ -906,7 +952,7 @@ footer{
 }
 
 .producto-nombre {
-    font-size: 0.8rem;
+    font-size: 0.92rem;   
     color: #333;
     line-height: 1.3;
     margin-bottom: 0.3rem;
@@ -914,11 +960,305 @@ footer{
 }
 
 .producto-precio {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #e1251b;
     margin: 0;
 }
+.btn-carrito {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 42px;
+    height: 42px;
+    padding: 0 !important;
+    box-shadow: none !important;
+    color: #e87722 !important;
+    flex-shrink: 0;
+    
+}
+
+.btn-carrito:hover,
+.btn-carrito:focus {
+    background: #f5f5f5 !important;
+    transform: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.carrito-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #e1251b;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+.producto-categoria {
+    display: inline-block;
+    font-size: 0.45rem;
+    color: #e87722;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    margin: 0.6rem 0.6rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #fff4ec;   /* ← fondo naranja muy suave */
+    border: 1.5px solid #e87722; /* ← borde naranja */
+    border-radius: 999px;        /* ← forma píldora */
+}
+
+.producto-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3rem;
+    margin-top: 0.25rem;
+}
+
+.producto-footer .producto-precio {
+    margin: 0;
+}
+
+.producto-controles {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-cantidad {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: unset !important;
+    padding: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    border-radius: 6px !important;
+    border: 1.5px solid #e1251b !important;
+    background: #e1251b !important; /* ← rojo */
+    color: white !important;         /* ← blanco */
+    box-shadow: none !important;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-cantidad:hover,
+.btn-cantidad:focus {
+    background: #e1251b !important; /* ← rojo más oscuro al hover */
+    transform: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.cantidad-num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #333;        /* ← el número del medio sigue oscuro sobre fondo blanco de la tarjeta */
+    min-width: 14px;
+    text-align: center;
+}
+#auth-standalone {
+    background: #c0201a !important;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#auth-standalone #auth-page {
+    min-height: 100vh;
+    background: #c0201a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 460px;
+}
+
+.auth-card {
+    background: white;
+    border-radius: 16px;
+    border: 1.5px solid #ddd;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.10);
+    overflow: hidden;
+}
+
+/* ENCABEZADO ROJO */
+.auth-header {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.8rem 1rem;
+    border-bottom: 1.5px solid rgba(0,0,0,0.10);
+}
+
+.auth-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* CUERPO DEL FORMULARIO */
+.auth-body {
+    padding: 2rem 2rem 2rem;
+}
+
+.auth-titulo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.auth-error {
+    background: #fdf0f0;
+    border: 1px solid #e1251b;
+    color: #e1251b;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.auth-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.auth-campo label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.auth-campo input {
+    padding: 0.65rem 0.9rem;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #222;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.auth-campo input:focus {
+    outline: none;
+    border-color: #e87722;
+}
+
+.auth-fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+.auth-captcha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+.input-password-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-password-wrap input {
+    padding-right: 2.8rem;
+}
+
+.btn-toggle-pass {
+    position: absolute;
+    right: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    transition: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+    color: #999 !important;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-toggle-pass:hover,
+.btn-toggle-pass:focus,
+.btn-toggle-pass:active {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    color: #999 !important;
+}
+
+.btn-toggle-pass svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+
+.auth-switch {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+}
+
+.auth-switch a {
+    color: #e87722;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+
 #externos-page .externo-texto p {
     font-size: 0.92rem;  /* ← cambia de 1.2rem */
     line-height: 1.7;
@@ -926,6 +1266,387 @@ footer{
     text-align: center;
     margin-inline: auto;
 }
+/* ── CONTACTO ─────────────────────────────── */
+
+#contacto-page {
+    background: #efefef;
+    padding: 1.5rem 1rem;
+    min-height: 60vh;
+}
+
+/* MÓVIL: una sola columna */
+#contacto-page .contacto-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Info arriba en móvil */
+#contacto-page .contacto-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    background: #efefef;
+    padding: 1rem;
+    order: -1;
+}
+
+/* Card blanco del formulario */
+#contacto-page .contacto-form {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem 1.2rem;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+    width: 100%;
+}
+
+#contacto-page .contacto-form-titulo {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    color: #1a1a1a;
+}
+
+/* Móvil: label arriba, input abajo */
+#contacto-page .contacto-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 0.9rem;
+}
+#contacto-page .contacto-campo label {
+    font-size: 0.95rem;
+    color: #333;
+    text-align: left;
+}
+#contacto-page .contacto-campo label span { color: #c0201a; }
+
+#contacto-page .contacto-campo input,
+#contacto-page .contacto-campo select,
+#contacto-page .contacto-campo textarea {
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.95rem;
+    width: 100%;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+#contacto-page .contacto-campo input:focus,
+#contacto-page .contacto-campo select:focus,
+#contacto-page .contacto-campo textarea:focus {
+    outline: none;
+    border-color: #c0201a;
+}
+#contacto-page .contacto-campo textarea { resize: vertical; }
+
+#contacto-page .contacto-btn {
+    background: #c0201a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+}
+#contacto-page .contacto-btn:hover { background: #a01815; }
+#contacto-page .contacto-btn-wrap { display: block; }
+
+/* Info Dunosusa */
+#contacto-page .contacto-logo { max-width: 220px; width: 100%; }
+#contacto-page .contacto-slogan {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
+    margin-top: -0.8rem;
+}
+#contacto-page .contacto-dato {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.9rem;
+    text-align: left;
+    width: 100%;
+    max-width: 360px;
+}
+#contacto-page .contacto-icono-wrap {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    background: #d5d5d5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+#contacto-page .contacto-dato-texto strong {
+    font-size: 0.95rem;
+    color: #111;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+#contacto-page .contacto-dato-texto p {
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Feedback */
+#contacto-page .contacto-exito {
+    background: #d4edda; color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px; padding: 1.2rem;
+    font-weight: 500; text-align: center;
+    margin-bottom: 1rem;
+}
+#contacto-page .contacto-error {
+    background: #f8d7da; color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px; padding: 1rem;
+    text-align: center; margin-bottom: 1rem;
+}
+/* ══ BOLSA DE TRABAJO ══════════════════════════════ */
+
+/* Página */
+#bolsa-page {
+    background: #f5f5f5;
+    min-height: 60vh;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Barra naranja — sticky debajo del navbar */
+.bolsa-buscador-wrap {
+    background: #e07b00;
+    padding: 0.5rem 0.8rem !important;      /* ← era 1rem, ahora más pequeño */
+    width: 100%;
+    position: sticky;
+    top: 160px !important;  /* altura del navbar en móvil */
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.bolsa-buscador-form {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.bolsa-buscador-inner {
+    display: flex !important;
+    align-items: center !important;
+    background: #fff !important;
+    border-radius: 999px !important;
+    padding: 0.2rem 0.5rem 0.2rem .2rem !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10) !important;
+    width: 40% !important;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.bolsa-buscador-input {
+    flex: 1 !important;
+    border: none !important;
+    outline: none !important;
+    color: #333 !important;
+    font-size: 0.95rem !important;
+    background: transparent !important;
+    min-width: 0 !important;
+    padding: 0.65rem 1.2rem !important;       /* ← este es clave, el input mismo puede tener padding propio */
+    height: 32px !important;
+    line-height: 32px !important;
+    
+}
+
+.bolsa-buscador-input::placeholder {
+    color: #333rgba(0,0,0,0.10) !important;
+}
+
+.bolsa-buscador-btn {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0.25rem 0.5rem !important;
+    cursor: pointer;
+    color: #e07b00 !important;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: none !important;
+}
+.bolsa-buscador-btn:hover,
+.bolsa-buscador-btn:focus,
+.bolsa-buscador-btn:active {
+    background: none !important;
+    box-shadow: none !important;
+    color: #e07b00 !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Layout: sidebar + listado */
+.bolsa-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 5rem !important;
+    flex-direction: column;
+    padding: 0.8rem 0.5rem;
+
+}
+
+/* Sidebar */
+.bolsa-sidebar {
+    background: #fff;
+    border-radius: 8px;
+    padding: 0.8rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+.bolsa-sidebar-titulo {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    margin-bottom: 0.8rem;
+}
+.bolsa-cat-lista {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.bolsa-cat-link {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: #f0f0f0;
+    color: #333;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.bolsa-cat-link:hover  { background: #e07b00; color: #fff; }
+.bolsa-cat-link.activa { background: #c0201a; color: #fff; }
+
+/* Tabla */
+.bolsa-listado { width: 100%; }
+.bolsa-resultado-texto { font-size: 0.9rem; margin-bottom: 1rem; color: #555; }
+.bolsa-resultado-texto a { color: #c0201a; }
+
+.bolsa-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+.bolsa-tabla thead tr { border-bottom: 2px solid #e0e0e0; }
+.bolsa-tabla th {
+    text-align: left;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.bolsa-fila td {
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: #333;
+    border-bottom: 1px solid #ebebeb;
+}
+.bolsa-fila.par   { background: #f9f9f9; }
+.bolsa-fila:hover { background: #fff3ee; }
+.bolsa-td-puesto  { font-weight: 600; color: #1a1a1a; }
+.bolsa-td-fecha   { color: #888; font-size: 0.88rem; white-space: nowrap; }
+
+.bolsa-vacio {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+    background: #fff;
+    border-radius: 8px;
+}
+
+/* ══ DETALLE EMPLEO ══════════════════════════════ */
+#empleo-detalle-page {
+    background: #f5f5f5;
+    min-height: 60vh;
+    padding: 2rem 1rem;
+    margin-top: 70px;     /* misma altura que el navbar */
+}
+.empleo-detalle-wrap  { max-width: 900px; margin: 0 auto; }
+.empleo-volver {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    color: #c0201a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+.empleo-volver:hover { text-decoration: underline; }
+
+.empleo-detalle-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+}
+.empleo-detalle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.empleo-detalle-meta p { font-size: 0.95rem; margin-bottom: 0.3rem; color: #333; }
+.empleo-btn-candidatura {
+    background: #1a2f5e;
+    color: #fff;
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+.empleo-btn-candidatura:hover { background: #0f1f40; }
+.empleo-divider { border: none; border-top: 1px solid #e5e5e5; margin: 1.5rem 0; }
+.empleo-titulo-seccion {
+    text-align: center;
+    color: #c0201a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.empleo-subtitulo { text-align: center; font-size: 1rem; margin-bottom: 1.5rem; color: #333; }
+.empleo-info-tabla { border-collapse: collapse; margin-bottom: 1.5rem; border: 1px solid #333; }
+.empleo-info-tabla td { border: 1px solid #333; padding: 0.35rem 0.8rem; font-size: 0.92rem; }
+.empleo-info-tabla td:first-child { font-weight: 700; }
+.empleo-seccion-titulo { font-size: 0.95rem; font-weight: 700; margin: 1.2rem 0 0.5rem; color: #1a1a1a; }
+.empleo-lista { padding-left: 1.4rem; margin: 0 0 0.8rem; }
+.empleo-lista li { font-size: 0.92rem; color: #333; margin-bottom: 0.3rem; line-height: 1.5; }
+
+
+
 
 /* Para dispositivos que tengan un mayor a 850px de ancho */
 @media (min-width: 850px){
@@ -978,7 +1699,7 @@ footer{
     margin-top: 0;       
     padding-top: 70px;  
     min-height: 100vh;
-}
+    }
 
 
     #slogan-principal h1{
@@ -1195,7 +1916,10 @@ footer{
      .productos-layout {
         padding: 1.5rem 2rem;
     }
-
+    .productos-barra {
+        top: 60px;     /* altura del header en escritorio */
+    }
+    
 
     .productos-sidebar.visible {
         display: block;
@@ -1320,6 +2044,93 @@ footer{
         color: #e1251b;
         font-weight: 600;
     }
+    #contacto-page {
+        padding: 2.5rem 3rem;
+    }
+
+    /* 2 columnas lado a lado */
+    #contacto-page .contacto-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        flex-direction: unset;
+    }
+
+    #contacto-page .contacto-info {
+        order: unset;
+        grid-column: 2;
+        grid-row: 1;
+        padding: 1.5rem 1rem;
+    }
+
+    #contacto-page .contacto-form-wrap {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #contacto-page .contacto-form {
+        padding: 2.2rem 2rem;
+    }
+
+    #contacto-page .contacto-form-titulo {
+        font-size: 1.9rem;
+    }
+
+    /* Escritorio: label izquierda, input derecha */
+    #contacto-page .contacto-campo {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        align-items: center;
+        flex-direction: unset;
+    }
+    #contacto-page .contacto-campo.campo-textarea {
+        align-items: start;
+    }
+    #contacto-page .contacto-campo.campo-textarea label {
+        padding-top: 0.45rem;
+    }
+    #contacto-page .contacto-campo label {
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    /* Botón alineado con los inputs */
+    #contacto-page .contacto-btn-wrap {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 0.6rem;
+        margin-top: 0.5rem;
+    }
+
+    #contacto-page .contacto-logo { max-width: 260px; }
+
+    .bolsa-buscador-inner {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .bolsa-buscador-wrap {
+        top: 56px !important;  /* altura del navbar en móvil */
+    }
+
+
+    .bolsa-layout {
+        flex-direction: row;   /* sidebar a la izquierda, tabla a la derecha */
+        align-items: flex-start;
+        padding: 2rem 1rem;
+    }
+
+    .bolsa-sidebar {
+        width: 220px;
+        flex-shrink: 0;
+    }
+
+    .bolsa-listado {
+        flex: 1;
+    }
+    #empleo-detalle-page { padding: 2.5rem 3rem; }
+    .empleo-detalle-card { padding: 2.5rem; }
+
 
 }
 

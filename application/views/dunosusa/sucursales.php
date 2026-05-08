@@ -19,12 +19,21 @@
                  data-direccion="<?= htmlspecialchars($s->direccion . ', ' . $s->colonia) ?>"
                  data-maps="<?= $s->maps_url ?>"
                  onclick="seleccionarSucursal(this)">
-                
+
                 <div class="sucursal-card-info">
                     <h3><?= $s->nombre ?></h3>
                     <p><?= $s->direccion ?>, <?= $s->colonia ?></p>
-                    <?php if($s->horario): ?>
-                    <span class="sucursal-horario">🕐 <?= $s->horario ?></span>
+
+                    <?php if($s->horario || !empty($s->telefono)): ?>
+                    <div class="sucursal-extra">
+                        <?php if($s->horario): ?>
+                            <span class="sucursal-horario">🕐 <?= $s->horario ?></span>
+                        <?php endif; ?>
+
+                        <?php if(!empty($s->telefono)): ?>
+                            <span class="sucursal-telefono">📞 <?= $s->telefono ?></span>
+                        <?php endif; ?>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -34,13 +43,13 @@
         <!-- MAPA -->
         <div class="sucursales-mapa-wrapper">
             <iframe
-            id="mapa-principal"
-            class="sucursales-mapa"
-            src="https://maps.google.com/maps?q=Dunosusa+Merida+Yucatan&output=embed"
-            width="100%" height="100%"
-            style="border:0;"
-            allowfullscreen
-            loading="lazy">
+                id="mapa-principal"
+                class="sucursales-mapa"
+                src="https://maps.google.com/maps?q=Dunosusa+Merida+Yucatan&output=embed"
+                width="100%" height="100%"
+                style="border:0;"
+                allowfullscreen
+                loading="lazy">
             </iframe>
 
             <!-- Info flotante al seleccionar -->

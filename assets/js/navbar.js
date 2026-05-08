@@ -73,3 +73,14 @@ document.querySelectorAll('.externos-barra-item').forEach(link => {
         }
     });
 });
+
+function togglePass(inputId, btn) {
+    const input = document.getElementById(inputId);
+    if (input.type === 'password') {
+        input.type = 'text';
+        btn.style.color = '#e87722';
+    } else {
+        input.type = 'password';
+        btn.style.color = '#999';
+    }
+}

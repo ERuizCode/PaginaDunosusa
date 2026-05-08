@@ -50,7 +50,20 @@
                 </svg>
             </button>
         </form>
+
+                            <!-- BOTÓN CARRITO -->
+        <button type="button" class="btn-carrito" aria-label="Carrito de compras">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <span class="carrito-badge">0</span>
+        </button>
+
     </div>
+    
 
     <!-- LAYOUT SIN SIDEBAR -->
     <div class="productos-layout container">
@@ -72,26 +85,40 @@
                 <p class="productos-intro">Selecciona una categoría o busca un producto.</p>
             <?php endif; ?>
 
-            <?php if(!empty($productos)): ?>
-            <div class="productos-grid">
-                <?php foreach($productos as $p): ?>
-                <div class="producto-card">
-                    <div class="producto-img-wrap">
-                        <img src="<?= base_url('assets/media/productos/' . rawurlencode($p->imagen)) ?>"
-                             alt="<?= htmlspecialchars($p->nombre) ?>"
-                             loading="lazy"
-                             onerror="this.src='<?= base_url('assets/media/productos/sin-imagen.png') ?>'">
-                    </div>
-                    <div class="producto-info">
-                        <p class="producto-nombre"><?= htmlspecialchars($p->nombre) ?></p>
-                        <p class="producto-precio">$<?= number_format($p->precio, 2) ?></p>
-                    </div>
+                <?php if(!empty($productos)): ?>
+<div class="productos-grid">
+    <?php foreach($productos as $p): ?>
+    <div class="producto-card">
+
+        <span class="producto-categoria"><?= htmlspecialchars($p->subcategoria) ?></span>
+
+        <div class="producto-img-wrap">
+            <img src="<?= base_url('assets/media/productos/' . rawurlencode($p->imagen)) ?>"
+                 alt="<?= htmlspecialchars($p->nombre) ?>"
+                 loading="lazy"
+                 onerror="this.src='<?= base_url('assets/media/productos/sin-imagen.png') ?>'">
+        </div>
+
+        <div class="producto-info">
+            <p class="producto-nombre"><?= htmlspecialchars($p->nombre) ?></p>
+
+            <div class="producto-footer">
+                <p class="producto-precio">$<?= number_format($p->precio, 2) ?></p>
+
+                <div class="producto-controles">
+                    <button type="button" class="btn-cantidad" aria-label="Restar">−</button>
+                    <span class="cantidad-num">0</span>
+                    <button type="button" class="btn-cantidad" aria-label="Sumar">+</button>
                 </div>
-                <?php endforeach; ?>
             </div>
-            <?php elseif(!empty($busqueda) || !empty($categoria_activa)): ?>
-            <p class="productos-vacio">No se encontraron productos.</p>
-            <?php endif; ?>
+        </div>
+
+    </div>
+        <?php endforeach; ?>
+    </div>
+                <?php elseif(!empty($busqueda) || !empty($categoria_activa)): ?>
+                <p class="productos-vacio">No se encontraron productos.</p>
+                <?php endif; ?>
 
         </section>
     </div>

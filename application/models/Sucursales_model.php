@@ -8,7 +8,7 @@ class Sucursales_model extends CI_Model {
     }
 
     public function get_sucursales() {
-        $query = $this->db->query('CALL Obtener_sucursales()');
+        $query = $this->db->query("CALL Obtenersucursales()");
         return $query->result();
     }
 }
