@@ -100,20 +100,22 @@ header .logo{
 
 header .container{
     display: flex;
-    flex-direction: column;   
-    align-items: center;    
-    
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header nav{
     display: flex;
-    flex-direction: row;     
-    flex-wrap: wrap;         
-    justify-content: center;  
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
     padding-bottom: 7px;
     padding-top: 7px;
     gap: 10px;
+    width: 100%;
 }
 
 header a{
@@ -1658,33 +1660,37 @@ footer{
         padding-top: 0px;
     }
 
-    header{
-        position: fixed;
+     header .container{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        top: 0; 
-    }
-    header nav{
-        flex-direction: row;     
-        flex-wrap: nowrap;       
-        gap: 10px;  
-        margin-left: auto;       
-    }
-    header a {
-        font-size: 0.99em;  
-        padding: 5px 8px;   
-    }
-
-    header .container{
-        flex-direction: row;   /* ←column: logo encima, nav abajo. row: todo en linea */
-        align-items: center;     
-        justify-content: space-evenly;
-        margin-right: 20px;
-        margin-left: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
     header .logo{
-        height: 50px;            
-        padding: 3px 20px;          /* 10px y 20px pref*/
+        height: 50px;
+        padding: 3px 0;
+        flex-shrink: 0;
+    }
+
+    header nav{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        gap: 10px;
+        width: auto;
+        margin-left: auto;
+    }
+
+    header a{
+        font-size: 0.99em;
+        padding: 5px 8px;
     }
 
     
@@ -2047,7 +2053,9 @@ footer{
         font-weight: 600;
     }
     #contacto-page {
-        padding: 2.5rem 3rem;
+    background: #efefef;
+    padding: 2.5rem 1rem 1.5rem;
+    min-height: 60vh;
     }
 
     /* 2 columnas lado a lado */
@@ -2059,10 +2067,16 @@ footer{
     }
 
     #contacto-page .contacto-info {
-        order: unset;
-        grid-column: 2;
-        grid-row: 1;
-        padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    background: #ffffff;
+    padding: 1.8rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+    margin-top: 45px;
     }
 
     #contacto-page .contacto-form-wrap {
@@ -2071,9 +2085,8 @@ footer{
     }
 
     #contacto-page .contacto-form {
-        padding: 2.2rem 2rem;
+    margin-top: 45px;
     }
-
     #contacto-page .contacto-form-titulo {
         font-size: 1.9rem;
     }
