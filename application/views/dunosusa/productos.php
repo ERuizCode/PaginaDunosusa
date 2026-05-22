@@ -105,10 +105,11 @@
             <div class="producto-footer">
                 <p class="producto-precio">$<?= number_format($p->precio, 2) ?></p>
 
-                <div class="producto-controles">
-                    <button type="button" class="btn-cantidad" aria-label="Restar">−</button>
-                    <span class="cantidad-num">0</span>
-                    <button type="button" class="btn-cantidad" aria-label="Sumar">+</button>
+                <div class="producto-controles"
+                    data-id="<?= $p->id ?>" 
+                    data-existencia="<?= $p->existencia ?>"> <button type="button" class="btn-cantidad btn-restar deshabilitado" aria-label="Restar">−</button>
+                   <span class="cantidad-num">0</span>
+                   <button type="button" class="btn-cantidad btn-sumar" aria-label="Sumar">+</button>
                 </div>
             </div>
         </div>
@@ -151,6 +152,78 @@
     });
 
     dropdown.addEventListener('click', function(e) {
+       e.stopPropagation();
+        const abierto = dropdown.classList.toggle('visible');
+        chevron.classList.toggle('abierto', abierto);
+        btnCat.setAttribute('aria-expanded', abierto);
+    });
+
+    document.addEventListener('click', function() {
+        dropdown.classList.remove('visible');
+        chevron.classList.remove('abierto');
+        btnCat.setAttribute('aria-expanded', 'false');
+    });
+
+    dropdown.addEventListener('click', function(e) {
         e.stopPropagation();
     });
+    const contadorCarrito = document.querySelector('.carrito-badge');
+    let carrito = {};
+
+    document.querySelectorAll('.producto-controles').forEach(function(control) {
+        const btnRestar = control.querySelector('.btn-restar');
+        const btnSumar = control.querySelector('.btn-sumar');
+        const cantidad = control.querySelector('.cantidad-num');
+        const idProducto = control.getAttribute('data-id');
+        const existencia = parseInt(control.getAttribute('data-existencia'));
+
+    //boton suma
+    btnSumar.addEventListener('click', function() {
+
+        let numero = parseInt(cantidad.textContent);
+
+        if (numero < existencia) {
+            numero = numero + 1;
+            cantidad.textContent = numero;
+            carrito[idProducto] = numero;
+            actualizarCarrito();
+
+        } 
+
+    });
+
+    // boton resta
+    btnRestar.addEventListener('click', function() {
+        let numero = parseInt(cantidad.textContent);
+
+        if (numero > 0) {
+            numero = numero - 1;
+            cantidad.textContent = numero;
+
+            if (numero == 0) {
+                delete carrito[idProducto];
+
+            } else {
+                carrito[idProducto] = numero;
+            }
+            actualizarCarrito();
+
+        }
+
+    });
+
+});
+
+//total
+function actualizarCarrito() {
+    let total = 0;
+
+    for (let id in carrito) {
+        total = total + carrito[id];
+
+    }
+    contadorCarrito.textContent = total;
+
+}
+
 </script>
