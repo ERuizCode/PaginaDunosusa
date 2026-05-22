@@ -93,10 +93,11 @@
         <span class="producto-categoria"><?= htmlspecialchars($p->subcategoria) ?></span>
 
         <div class="producto-img-wrap">
-            <img src="<?= base_url('assets/media/productos/' . rawurlencode($p->imagen)) ?>"
-                 alt="<?= htmlspecialchars($p->nombre) ?>"
-                 loading="lazy"
-                 onerror="this.src='<?= base_url('assets/media/productos/sin-imagen.png') ?>'">
+            <img src="<?= base_url($p->imagen) ?>"
+                alt="<?= htmlspecialchars($p->nombre) ?>"
+                loading="lazy"
+                onerror="this.src='<?= base_url('assets/media/productos/sin-imagen.png') ?>'">
+                
         </div>
 
         <div class="producto-info">
